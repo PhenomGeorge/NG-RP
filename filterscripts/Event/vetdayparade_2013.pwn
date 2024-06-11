@@ -16,7 +16,7 @@
 		(***) Farva
 
 */
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 
 public OnFilterScriptInit()

@@ -7,7 +7,7 @@
 	However, OnPlayerDamage is still called, so can use SetHP to create server sided armour/HP
 	Another perk: Car parking and heliblading is now impossible, they just get stuck under car!
 */
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 
 #define SetPlayerHealthEx(%0,%1) pHealth[%0] = (%1), SetPlayerHealth(%0, (%1))

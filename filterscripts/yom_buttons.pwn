@@ -97,7 +97,7 @@
 #define YSI_NO_VERSION_CHECK
 
 /*----------------------------------------------------------------------------*/
-#include <a_samp>
+#include <open.mp>
 #include <YSI_Data\y_iterate>
 #include <streamer>
 

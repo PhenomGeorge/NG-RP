@@ -831,7 +831,7 @@ CMD:gedittexture(playerid, params[])
 		}
 		else if(strcmp(option, "color", true) == 0)
 		{
-			if(strlen(var) > 6 || !ishex(var)) return SendClientMessageEx(playerid, COLOR_GREY, "Color must be a valid hexadecimal color (ie: BCA3FF)");
+			if(strlen(var) > 6 || !IsHex(var)) return SendClientMessageEx(playerid, COLOR_GREY, "Color must be a valid hexadecimal color (ie: BCA3FF)");
 			new value;
 			sscanf(var, "h", value);
 		    GateInfo[gateid][gTColor] = value;

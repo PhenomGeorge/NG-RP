@@ -2,7 +2,7 @@
 
 #define YSI_NO_HEAP_MALLOC
 
-#include <a_samp>
+#include <open.mp>
 #include <YSI_Coding\y_timers>
 #include <YSI_Data\y_iterate>
 #include <Pawn.CMD>

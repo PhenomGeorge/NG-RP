@@ -392,7 +392,7 @@ stock IsMDCPermitted(playerid)
 	return 0;
 }
 
-stock GetPlayerGroupInfo(targetid, const rank[], const division[], const employer[])
+stock GetPlayerGroupInfo(targetid, rank[], division[], employer[])
 {
 	new
 		iGroupID = PlayerInfo[targetid][pMember],
@@ -1956,7 +1956,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					szTitle[32 + GROUP_MAX_NAME_LEN],
 					hColour;
 
-				if(strlen(inputtext) > 6 || !ishex(inputtext)) {
+				if(strlen(inputtext) > 6 || !IsHex(inputtext)) {
 					format(szTitle, sizeof szTitle, "Edit Group Duty Color {%s}(%s)", Group_NumToDialogHex(arrGroupData[iGroupID][g_hDutyColour]), arrGroupData[iGroupID][g_szGroupName]);
 					return ShowPlayerDialogEx(playerid, DIALOG_GROUP_DUTYCOL, DIALOG_STYLE_INPUT, szTitle, "Invalid value specified.\n\nEnter a colour in hexadecimal format (for example, BCA3FF). This colour will be used to identify the group.", "Confirm", "Cancel");
 				}
@@ -1989,7 +1989,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					szTitle[32 + GROUP_MAX_NAME_LEN],
 					hColour;
 
-				if(strlen(inputtext) > 6 || !ishex(inputtext)) {
+				if(strlen(inputtext) > 6 || !IsHex(inputtext)) {
 					format(szTitle, sizeof szTitle, "Edit Group Radio Color {%s}(%s)", Group_NumToDialogHex(arrGroupData[iGroupID][g_hDutyColour]), arrGroupData[iGroupID][g_szGroupName]);
 					return ShowPlayerDialogEx(playerid, DIALOG_GROUP_RADIOCOL, DIALOG_STYLE_INPUT, szTitle, "Invalid value specified.\n\nEnter a colour in hexadecimal format (for example, BCA3FF). This colour will be used for the group's in-character radio chat.", "Confirm", "Cancel");
 				}
@@ -2592,7 +2592,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					szTitle[32 + GROUP_MAX_NAME_LEN],
 					hColour;
 
-				if(strlen(inputtext) > 6 || !ishex(inputtext)) {
+				if(strlen(inputtext) > 6 || !IsHex(inputtext)) {
 					format(szTitle, sizeof szTitle, "Edit Group OOC Chat Color {%s}(%s)", Group_NumToDialogHex(arrGroupData[iGroupID][g_hDutyColour]), arrGroupData[iGroupID][g_szGroupName]);
 					return ShowPlayerDialogEx(playerid, DIALOG_GROUP_RADIOCOL, DIALOG_STYLE_INPUT, szTitle, "Invalid value specified.\n\nEnter a color in hexadecimal format (for example, BCA3FF). This color will be that of their OOC Chat.", "Confirm", "Cancel");
 				}
@@ -3942,7 +3942,7 @@ CMD:dvrespawn(playerid, params[])
 			    new iModelID = DynVehicleInfo[i][gv_iModel];
 			    if(400 <= iModelID < 612 && DynVehicleInfo[i][gv_igID] == iGroupID)
 			    {
-					if(!IsVehicleOccupied(DynVehicleInfo[i][gv_iSpawnedID]))
+					if(!NGGIsVehicleOccupied(DynVehicleInfo[i][gv_iSpawnedID]))
 					{
 						if(strval(params) == 1) DynVeh_Spawn(i, 1); else DynVeh_Spawn(i);
 					}
@@ -6570,7 +6570,7 @@ AddGroupSafeWeapon(playerid, iGroupID, iWeaponID, iAmount = 1) {
 
 	szMiscArray[0] = 0;
 
-	if(playerid != INVALID_PLAYER_ID && PlayerInfo[playerid][pGuns][GetWeaponSlot(iWeaponID)] == 0) return 1;
+	if(playerid != INVALID_PLAYER_ID && PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(iWeaponID)] == 0) return 1;
 
 	mysql_format(MainPipeline, szMiscArray, sizeof(szMiscArray), "UPDATE `gWeaponsNew` SET `%d` = `%d` + %d WHERE `id` = '%d'", iWeaponID, iWeaponID, iAmount, iGroupID+1);
 	//mysql_format(MainPipeline, szMiscArray, sizeof(szMiscArray), "INSERT INTO `gWeapons` (`Group_ID`, `Weapon_ID`) VALUES ('%d', '%d') ", iGroupID, iWeaponID);
@@ -6584,7 +6584,7 @@ public OnAddGroupSafeWeapon(playerid, iGroupID, iWeaponID, iAmount) {
 	szMiscArray[0] = 0;
 
 	if(playerid != INVALID_PLAYER_ID) {
-		PlayerInfo[playerid][pGuns][GetWeaponSlot(iWeaponID)] = 0;
+		PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(iWeaponID)] = 0;
 		SetPlayerWeaponsEx(playerid);
 
 		format(szMiscArray, sizeof(szMiscArray), "%s has deposited a %s into the locker.", GetPlayerNameEx(playerid), Weapon_ReturnName(iWeaponID));

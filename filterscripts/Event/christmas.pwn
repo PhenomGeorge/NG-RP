@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 #include <Pawn.CMD>
 

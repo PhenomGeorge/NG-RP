@@ -287,7 +287,7 @@ ReturnWeaponName(iWeaponID) {
 	return szName;
 }
 
-GetWeaponSlot(iWeaponID) {
+NGGGetWeaponSlot(iWeaponID) {
 	switch(iWeaponID) {
 		case 0, 1:
 			return 0;
@@ -355,7 +355,7 @@ OnPlayerChangeWeapon(playerid, newweapon)
 
 		if(newweapon == WEAPON_PARACHUTE) PlayerInfo[playerid][pGuns][11] = 46;
 
-		if(PlayerInfo[playerid][pGuns][GetWeaponSlot(newweapon)] != newweapon) {
+		if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(newweapon)] != newweapon) {
 			SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: Client weapon detected. Admins were notified: refrain from doing it again.");
 			ExecuteHackerAction(playerid, newweapon);
 			SetPlayerWeaponsEx(playerid);
@@ -368,7 +368,7 @@ OnPlayerChangeWeapon(playerid, newweapon)
 		}
 
 		/*
-		if( PlayerInfo[playerid][pGuns][GetWeaponSlot(newweapon)] != newweapon) {
+		if( PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(newweapon)] != newweapon) {
 			new iWarnings = GetPVarInt(playerid, "WpnHack_Warnings");
 			if(iWarnings > 3) {
 				KickEx(playerid);
@@ -646,7 +646,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your silenced pistol.");
 				format(string, sizeof(string), "* %s has given %s their silenced pistol.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 23);
+				NGGRemovePlayerWeapon(playerid, 23);
 				GivePlayerValidWeapon(giveplayerid, 23);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -673,7 +673,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your 9mm pistol.");
 				format(string, sizeof(string), "* %s has given %s their 9mm pistol.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 22);
+				NGGRemovePlayerWeapon(playerid, 22);
 				GivePlayerValidWeapon(giveplayerid, 22);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -702,7 +702,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your shotgun.");
 				format(string, sizeof(string), "* %s has given %s their shotgun.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 25);
+				NGGRemovePlayerWeapon(playerid, 25);
 				GivePlayerValidWeapon(giveplayerid, 25);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -731,7 +731,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your MP5.");
 				format(string, sizeof(string), "* %s has given %s their MP5.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 29);
+				NGGRemovePlayerWeapon(playerid, 29);
 				GivePlayerValidWeapon(giveplayerid, 29);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -758,7 +758,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your Micro SMG.");
 				format(string, sizeof(string), "* %s has given %s their Micro SMG.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 28);
+				NGGRemovePlayerWeapon(playerid, 28);
 				GivePlayerValidWeapon(giveplayerid, 28);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -785,7 +785,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your Tec-9.");
 				format(string, sizeof(string), "* %s has given %s their Tec-9.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 32);
+				NGGRemovePlayerWeapon(playerid, 32);
 				GivePlayerValidWeapon(giveplayerid, 32);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -814,7 +814,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your Desert Eagle.");
 				format(string, sizeof(string), "* %s has given %s their Desert Eagle.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 24);
+				NGGRemovePlayerWeapon(playerid, 24);
 				GivePlayerValidWeapon(giveplayerid, 24);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -842,7 +842,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your rifle.");
 				format(string, sizeof(string), "* %s has given %s their rifle.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 33);
+				NGGRemovePlayerWeapon(playerid, 33);
 				GivePlayerValidWeapon(giveplayerid, 33);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -869,7 +869,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your AK-47.");
 				format(string, sizeof(string), "* %s has given %s their AK-47.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 30);
+				NGGRemovePlayerWeapon(playerid, 30);
 				GivePlayerValidWeapon(giveplayerid, 30);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -896,7 +896,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your M4.");
 				format(string, sizeof(string), "* %s has given %s their M4.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 31);
+				NGGRemovePlayerWeapon(playerid, 31);
 				GivePlayerValidWeapon(giveplayerid, 31);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -923,7 +923,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your SPAS-12.");
 				format(string, sizeof(string), "* %s has given %s their SPAS-12.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 27);
+				NGGRemovePlayerWeapon(playerid, 27);
 				GivePlayerValidWeapon(giveplayerid, 27);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -950,7 +950,7 @@ CMD:giveweapon(playerid, params[])
 				SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your sniper rifle.");
 				format(string, sizeof(string), "* %s has given %s their sniper rifle.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 				ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-				RemovePlayerWeapon(playerid, 34);
+				NGGRemovePlayerWeapon(playerid, 34);
 				GivePlayerValidWeapon(giveplayerid, 34);
 				/*new ip[32], ipex[32];
 				GetPlayerIp(playerid, ip, sizeof(ip));
@@ -975,7 +975,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your flowers.");
 			format(string, sizeof(string), "* %s has given %s their flowers.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 14);
+			NGGRemovePlayerWeapon(playerid, 14);
 			GivePlayerValidWeapon(giveplayerid, 14);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -995,7 +995,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your brass knuckles.");
 			format(string, sizeof(string), "* %s has given %s their brass knuckles.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 1);
+			NGGRemovePlayerWeapon(playerid, 1);
 			GivePlayerValidWeapon(giveplayerid, 1);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1015,7 +1015,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your baseball bat.");
 			format(string, sizeof(string), "* %s has given %s their baseball bat.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 5);
+			NGGRemovePlayerWeapon(playerid, 5);
 			GivePlayerValidWeapon(giveplayerid, 5);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1035,7 +1035,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your cane.");
 			format(string, sizeof(string), "* %s has given %s their cane.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 15);
+			NGGRemovePlayerWeapon(playerid, 15);
 			GivePlayerValidWeapon(giveplayerid, 15);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1055,7 +1055,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your shovel.");
 			format(string, sizeof(string), "* %s has given %s their shovel.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 6);
+			NGGRemovePlayerWeapon(playerid, 6);
 			GivePlayerValidWeapon(giveplayerid, 6);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1077,7 +1077,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your golf club.");
 			format(string, sizeof(string), "* %s has given %s golf club.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 2);
+			NGGRemovePlayerWeapon(playerid, 2);
 			GivePlayerValidWeapon(giveplayerid, 2);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1099,7 +1099,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your katana.");
 			format(string, sizeof(string), "* %s has given %s their katana.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 8);
+			NGGRemovePlayerWeapon(playerid, 8);
 			GivePlayerValidWeapon(giveplayerid, 8);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1121,7 +1121,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your dildo.");
 			format(string, sizeof(string), "* %s has given %s their dildo.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 10);
+			NGGRemovePlayerWeapon(playerid, 10);
 			GivePlayerValidWeapon(giveplayerid, 10);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1141,7 +1141,7 @@ CMD:giveweapon(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have given away your parachute.");
 			format(string, sizeof(string), "* %s has given %s their parachute.", GetPlayerNameEx(playerid), GetPlayerNameEx(giveplayerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 46);
+			NGGRemovePlayerWeapon(playerid, 46);
 			GivePlayerValidWeapon(giveplayerid, 46);
 			/*new ip[32], ipex[32];
 			GetPlayerIp(playerid, ip, sizeof(ip));
@@ -1205,7 +1205,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your silenced pistol.");
 			format(string, sizeof(string), "* %s has dropped their silenced pistol.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 23);
+			NGGRemovePlayerWeapon(playerid, 23);
 		}
 		else
 		{
@@ -1219,7 +1219,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your camera.");
 			format(string, sizeof(string), "* %s has dropped their camera.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 43);
+			NGGRemovePlayerWeapon(playerid, 43);
 		}
 		else
 		{
@@ -1233,7 +1233,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your nitestick.");
 			format(string, sizeof(string), "* %s has dropped their nitestick.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 3);
+			NGGRemovePlayerWeapon(playerid, 3);
 		}
 		else
 		{
@@ -1247,7 +1247,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your mace.");
 			format(string, sizeof(string), "* %s has dropped their mace.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 41);
+			NGGRemovePlayerWeapon(playerid, 41);
 		}
 		else
 		{
@@ -1261,7 +1261,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your knife.");
 			format(string, sizeof(string), "* %s has dropped their knife.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 4);
+			NGGRemovePlayerWeapon(playerid, 4);
 		}
 		else
 		{
@@ -1275,7 +1275,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your 9mm pistol.");
 			format(string, sizeof(string), "* %s has dropped their 9mm pistol.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 22);
+			NGGRemovePlayerWeapon(playerid, 22);
 		}
 		else
 		{
@@ -1289,7 +1289,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your shotgun.");
 			format(string, sizeof(string), "* %s has dropped their shotgun.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 25);
+			NGGRemovePlayerWeapon(playerid, 25);
 		}
 		else
 		{
@@ -1303,7 +1303,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your MP5.");
 			format(string, sizeof(string), "* %s has dropped their MP5.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 29);
+			NGGRemovePlayerWeapon(playerid, 29);
 		}
 		else
 		{
@@ -1317,7 +1317,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your Micro SMG.");
 			format(string, sizeof(string), "* %s has dropped their Micro SMG.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 28);
+			NGGRemovePlayerWeapon(playerid, 28);
 		}
 		else
 		{
@@ -1331,7 +1331,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your Tec-9.");
 			format(string, sizeof(string), "* %s has dropped their Tec-9.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 32);
+			NGGRemovePlayerWeapon(playerid, 32);
 		}
 		else
 		{
@@ -1345,7 +1345,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your Desert Eagle.");
 			format(string, sizeof(string), "* %s has dropped their Desert Eagle.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 24);
+			NGGRemovePlayerWeapon(playerid, 24);
 		}
 		else
 		{
@@ -1359,7 +1359,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your rifle.");
 			format(string, sizeof(string), "* %s has dropped their rifle.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 33);
+			NGGRemovePlayerWeapon(playerid, 33);
 		}
 		else
 		{
@@ -1373,7 +1373,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your AK-47.");
 			format(string, sizeof(string), "* %s has dropped their AK-47.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 30);
+			NGGRemovePlayerWeapon(playerid, 30);
 		}
 		else
 		{
@@ -1387,7 +1387,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your M4.");
 			format(string, sizeof(string), "* %s has dropped their M4.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 31);
+			NGGRemovePlayerWeapon(playerid, 31);
 		}
 		else
 		{
@@ -1401,7 +1401,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your SPAS-12.");
 			format(string, sizeof(string), "* %s has dropped their SPAS-12.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 27);
+			NGGRemovePlayerWeapon(playerid, 27);
 		}
 		else
 		{
@@ -1415,7 +1415,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your sniper rifle.");
 			format(string, sizeof(string), "* %s has dropped their sniper rifle.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 34);
+			NGGRemovePlayerWeapon(playerid, 34);
 		}
 		else
 		{
@@ -1429,7 +1429,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your flowers.");
 			format(string, sizeof(string), "* %s has dropped their flowers.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 14);
+			NGGRemovePlayerWeapon(playerid, 14);
 		}
 		else
 		{
@@ -1443,7 +1443,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your brass knuckles.");
 			format(string, sizeof(string), "* %s has dropped their brass knuckles.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 1);
+			NGGRemovePlayerWeapon(playerid, 1);
 		}
 		else
 		{
@@ -1457,7 +1457,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your baseball bat.");
 			format(string, sizeof(string), "* %s has dropped their baseball bat.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 5);
+			NGGRemovePlayerWeapon(playerid, 5);
 		}
 		else
 		{
@@ -1472,7 +1472,7 @@ CMD:dropgun(playerid, params[])
 			format(string, sizeof(string), "* %s has dropped their cane.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			PlayerInfo[playerid][pGuns][ 10 ] = 0;
-			RemovePlayerWeapon(playerid, 15);
+			NGGRemovePlayerWeapon(playerid, 15);
 		}
 		else
 		{
@@ -1486,7 +1486,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your shovel.");
 			format(string, sizeof(string), "* %s has dropped their shovel.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 6);
+			NGGRemovePlayerWeapon(playerid, 6);
 		}
 		else
 		{
@@ -1500,7 +1500,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your golf club.");
 			format(string, sizeof(string), "* %s has dropped their golf club.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 2);
+			NGGRemovePlayerWeapon(playerid, 2);
 		}
 		else
 		{
@@ -1514,7 +1514,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your katana.");
 			format(string, sizeof(string), "* %s has dropped their katana.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 8);
+			NGGRemovePlayerWeapon(playerid, 8);
 		}
 		else
 		{
@@ -1528,7 +1528,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your dildo.");
 			format(string, sizeof(string), "* %s has dropped their dildo.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 10);
+			NGGRemovePlayerWeapon(playerid, 10);
 		}
 		else
 		{
@@ -1542,7 +1542,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your parachute.");
 			format(string, sizeof(string), "* %s has dropped their parachute.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 46);
+			NGGRemovePlayerWeapon(playerid, 46);
 		}
 		else
 		{
@@ -1556,7 +1556,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your smoke grenade.");
 			format(string, sizeof(string), "* %s has dropped their smoke grenade.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 17);
+			NGGRemovePlayerWeapon(playerid, 17);
 		}
 		else
 		{
@@ -1570,7 +1570,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your chainsaw.");
 			format(string, sizeof(string), "* %s has dropped their chainsaw.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 9);
+			NGGRemovePlayerWeapon(playerid, 9);
 		}
 		else
 		{
@@ -1584,7 +1584,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your fire extinguisher.");
 			format(string, sizeof(string), "* %s has dropped their fire extinguisher.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 42);
+			NGGRemovePlayerWeapon(playerid, 42);
 		}
 		else
 		{
@@ -1598,7 +1598,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your minigun.");
 			format(string, sizeof(string), "* %s has dropped their minigun.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 38);
+			NGGRemovePlayerWeapon(playerid, 38);
 		}
 		else
 		{
@@ -1612,7 +1612,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your pool cue.");
 			format(string, sizeof(string), "* %s has dropped their pool cue.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 7);
+			NGGRemovePlayerWeapon(playerid, 7);
 		}
 		else
 		{
@@ -1626,7 +1626,7 @@ CMD:dropgun(playerid, params[])
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "You have dropped your goggles.");
 			format(string, sizeof(string), "* %s has dropped their goggles.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			RemovePlayerWeapon(playerid, 44);
+			NGGRemovePlayerWeapon(playerid, 44);
 		}
 		else
 		{

@@ -106,7 +106,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	return 0;
 }
 
-GetPhoneZone(id, const zone[], len) {
+GetPhoneZone(id, zone[], len) {
 
 	new Float:x, Float:y, Float:z;
 	GetDynamicObjectPos(arrPayPhoneData[id][pp_iObjectID], x, y, z);

@@ -585,8 +585,8 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							ShowBackpackMenu(playerid, DIALOG_BGUNS, "- {02B0F5}You can only carry 2 handguns");
 							return 1;
 						}
-						if(slot != 0 && PlayerInfo[playerid][pGuns][GetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][GetWeaponSlot(wbid)] == 0) {
-							RemovePlayerWeapon(playerid, wbid);
+						if(slot != 0 && PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(wbid)] == 0) {
+							NGGRemovePlayerWeapon(playerid, wbid);
 							PlayerInfo[playerid][pBItems][slot] = wbid;
 							GetWeaponName(wbid, weapname, sizeof(weapname));
 							format(szMiscArray, sizeof(szMiscArray), "You have deposited a %s inside your backpack.", weapname);
@@ -612,8 +612,8 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							ShowBackpackMenu(playerid, DIALOG_BGUNS, "- {02B0F5}You can only carry 2 handguns and 1 primary");
 							return 1;
 						}
-						if(slot != 0 && PlayerInfo[playerid][pGuns][GetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][GetWeaponSlot(wbid)] == 0) {
-							RemovePlayerWeapon(playerid, wbid);
+						if(slot != 0 && PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(wbid)] == 0) {
+							NGGRemovePlayerWeapon(playerid, wbid);
 							PlayerInfo[playerid][pBItems][slot] = wbid;
 							GetWeaponName(wbid, weapname, sizeof(weapname));
 							format(szMiscArray, sizeof(szMiscArray), "You have deposited a %s inside your backpack.", weapname);
@@ -639,8 +639,8 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							ShowBackpackMenu(playerid, DIALOG_BGUNS, "- You can only carry 2 handguns and 3 primary");
 							return 1;
 						}
-						if(slot != 0 && PlayerInfo[playerid][pGuns][GetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][GetWeaponSlot(wbid)] == 0) {
-							RemovePlayerWeapon(playerid, wbid);
+						if(slot != 0 && PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(wbid)] == wbid && PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(wbid)] == 0) {
+							NGGRemovePlayerWeapon(playerid, wbid);
 							PlayerInfo[playerid][pBItems][slot] = wbid;
 							GetWeaponName(wbid, weapname, sizeof(weapname));
 							format(szMiscArray, sizeof(szMiscArray), "You have deposited a %s inside your backpack.", weapname);

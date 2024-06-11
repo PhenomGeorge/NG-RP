@@ -2,7 +2,7 @@
 //   NFS Filter Script v1.1
 //   Designed for SA-MP v3.0b
 //-------------------------------------------
-#include <a_samp>
+#include <open.mp>
 #include <YSI\y_ini>
 #define MAX_NOTES 50
 #define MAX_MODERATORS 10

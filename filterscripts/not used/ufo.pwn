@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 #define COLOR_WHITE 0xFFFFFFAA
 
 new ufo1, ufo2;

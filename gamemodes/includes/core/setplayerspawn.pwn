@@ -371,7 +371,7 @@ SetPlayerSpawn(playerid)
 					}
 					EventLastVW[playerid] = 0;
 					EventLastInt[playerid] = 0;
-					RemovePlayerWeapon(playerid, 38);
+					NGGRemovePlayerWeapon(playerid, 38);
 					health = GetPVarFloat(playerid, "pPreGodHealth");
 					SetHealth(playerid,health);
 					armor = GetPVarFloat(playerid, "pPreGodArmor");

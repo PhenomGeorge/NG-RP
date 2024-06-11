@@ -114,16 +114,14 @@ stock SendClientMessageEx(playerid, color, string[])
 */
 
 // Test with SendClientMessageEx
-stock SendClientMessageEx(playerid, color, const msg[], va_args<>)
-{
-        new string[128];
-        if(InsideMainMenu{playerid} == 1 || InsideTut{playerid} == 1 || ActiveChatbox[playerid] == 0)
-                return 0;
-        else {
-                va_format(string, sizeof(string), msg, va_start<3>);
-                SendClientMessage(playerid, color, string);
-        }
-        return 1;
+stock SendClientMessageEx(playerid, color, const msg[], OPEN_MP_TAGS:...) {
+	if (InsideMainMenu{playerid} == 1 || InsideTut{playerid} == 1 || ActiveChatbox[playerid] == 0)
+		return 0;
+	else {
+		format(YSI_UNSAFE_HUGE_STRING, YSI_UNSAFE_HUGE_LENGTH, msg, ___(3));
+		SendClientMessage(playerid, color, YSI_UNSAFE_HUGE_STRING);
+	}
+	return 1;
 }
 stock SendClientMessageToAllEx(color, const string[])
 {
@@ -722,7 +720,7 @@ ChatBoxProcess(playerid, hColor, szText[]) {
 	MessageColor[playerid][iSize] = hColor;
 	for(new line = 1; line < sizeof(TD_ChatBox); line++)
 	{
-		PlayerTextDrawColor(playerid, TD_ChatBox[line], MessageColor[playerid][line]);
+		PlayerTextDrawColour(playerid, TD_ChatBox[line], MessageColor[playerid][line]);
      	PlayerTextDrawShow(playerid, TD_ChatBox[line]);
 	}
 	return 1;
@@ -741,7 +739,7 @@ ChatBoxProcess(playerid, hColor, szText[]) {
 		format(PVarID, sizeof(PVarID), "CB%d", i - 1);
 		GetPVarString(playerid, PVarID, szMiscArray, sizeof(szMiscArray));
 		ChatBoxColor[playerid][i] = ChatBoxColor[playerid][i - 1];
-		if(!isnull(szMiscArray)) PlayerTextDrawColor(playerid, TD_ChatBox[i], ChatBoxColor[playerid][i]);
+		if(!isnull(szMiscArray)) PlayerTextDrawColour(playerid, TD_ChatBox[i], ChatBoxColor[playerid][i]);
 		PlayerTextDrawSetString(playerid, TD_ChatBox[i], szMiscArray);
 		PlayerTextDrawShow(playerid, TD_ChatBox[i]);
 
@@ -751,7 +749,7 @@ ChatBoxProcess(playerid, hColor, szText[]) {
 	}
 	SetPVarString(playerid, "CB1", szText);
 	ChatBoxColor[playerid][1] = hColor;
-	PlayerTextDrawColor(playerid, TD_ChatBox[1], hColor);
+	PlayerTextDrawColour(playerid, TD_ChatBox[1], hColor);
 	PlayerTextDrawSetString(playerid, TD_ChatBox[1], szText);
 	PlayerTextDrawShow(playerid, TD_ChatBox[1]);
 	return 1;

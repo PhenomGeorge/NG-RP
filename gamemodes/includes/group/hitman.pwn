@@ -578,7 +578,7 @@ CMD:quithma(playerid, params[])
 
 	SendClientMessage(playerid, COLOR_LIGHTBLUE, "*	You have quit the Hitman Agency. Your knife has been removed.");
 
-	if(PlayerInfo[playerid][pGuns][1] == 4) RemovePlayerWeapon(playerid, 4);
+	if(PlayerInfo[playerid][pGuns][1] == 4) NGGRemovePlayerWeapon(playerid, 4);
 	return 1;
 }
 
@@ -674,7 +674,7 @@ CMD:removehitman(playerid, params[])
 
 		format(szMiscArray, sizeof szMiscArray, "* %s %s has kicked you from the Hitman Agency. Your knife has been removed.", GetHitmanRank(playerid), GetPlayerNameEx(playerid));
 		SendClientMessage(iTarget, COLOR_LIGHTBLUE, szMiscArray);
-		if(PlayerInfo[iTarget][pGuns][1] == 4) RemovePlayerWeapon(iTarget, 4);
+		if(PlayerInfo[iTarget][pGuns][1] == 4) NGGRemovePlayerWeapon(iTarget, 4);
 
 		format(szMiscArray, sizeof szMiscArray, "%s %s has kicked %s from the Hitman Agency.", GetHitmanRank(playerid), GetPlayerNameEx(playerid), GetPlayerNameEx(iTarget));
 		new file[256], month, day, year;
@@ -699,7 +699,7 @@ CMD:removehitman(playerid, params[])
 
 		format(szMiscArray, sizeof szMiscArray, "* Administrator %s has kicked you from the Hitman Agency. Your knife has been removed.",  GetPlayerNameEx(playerid));
 		SendClientMessage(iTarget, COLOR_LIGHTBLUE, szMiscArray);
-		if(PlayerInfo[iTarget][pGuns][1] == 4) RemovePlayerWeapon(iTarget, 4);
+		if(PlayerInfo[iTarget][pGuns][1] == 4) NGGRemovePlayerWeapon(iTarget, 4);
 
 		format(szMiscArray, sizeof szMiscArray, "Administrator %s has kicked %s from the Hitman Agency.", GetPlayerNameEx(playerid), GetPlayerNameEx(iTarget));
 		new file[256], month, day, year;
@@ -1837,7 +1837,7 @@ CMD:knife(playerid, params[])
         }
         else {
             if(PlayerInfo[playerid][pGuns][1] == WEAPON_KNIFE) {
-                RemovePlayerWeapon(playerid, 4); // Remove Knife
+                NGGRemovePlayerWeapon(playerid, 4); // Remove Knife
                 SetPVarInt(playerid, "HidingKnife", 1);
                 SendClientMessageEx(playerid, COLOR_YELLOW, "You have hidden your knife.");
             }

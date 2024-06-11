@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 #include <Pawn.CMD>
 
 CMD:load911(playerid, params[])

@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 
 new Text3D:newyear, timesync, balldrop[2];
@@ -39,7 +39,7 @@ stock const NEWYEAR_DATA[39][NEWYEAR_INFO] = {
 	{1325383200, "Brazil, Uruguay and South Georgia/Sandwich Is."},
 	{1325386800, "Argentina, Brazil, Chile, Greenland, Falkland Islands, Suriname, Saint Pierre and Miquelon, Paraguay and French Guiana"},
 	{1325388600, "Newfoundland and Labrador/Canada"},
-	{1325390400, "Canada, Bolivia, Amazonas/Brazil, Dominican Republic, Dominica, Grenada, Guadeloupe, Puerto Rico, Martinique, Bermuda, Montserrat, Anguilla, Curaçao, Aruba, Saint Kitts and Nevis, Netherlands, Saint Lucia, Barbados, Saint Vincent and Grenadines, Trinidad and Tobago, US Virgin Islands, British Virgin Islands, Sint Maarten, Guyana, Antigua and Barbuda and Greenland"},
+	{1325390400, "Canada, Bolivia, Amazonas/Brazil, Dominican Republic, Dominica, Grenada, Guadeloupe, Puerto Rico, Martinique, Bermuda, Montserrat, Anguilla, Curaï¿½ao, Aruba, Saint Kitts and Nevis, Netherlands, Saint Lucia, Barbados, Saint Vincent and Grenadines, Trinidad and Tobago, US Virgin Islands, British Virgin Islands, Sint Maarten, Guyana, Antigua and Barbuda and Greenland"},
 	{1325392200, "Venezuela"},
 	{1325394000, "U.S.A., Canada, Colombia, Peru, Ecuador, Cuba, Panama, Bahamas, Haiti, Turks and Caicos Islands, Chile, Cayman Islands and Jamaica"},
 	{1325397600, "U.S.A., Canada, Mexico, Honduras, El Salvador, Guatemala, Nicaragua, Belize, Costa Rica and Ecuador"},

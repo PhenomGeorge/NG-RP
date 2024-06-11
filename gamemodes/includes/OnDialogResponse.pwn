@@ -32,6 +32,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <YSI_Coding\y_hooks>
+
 // This is the first hooked OnDialogResponse. It's used to check dialog spoofing.
 hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	if(dialogid != iLastDialogID[playerid]) {
@@ -2450,7 +2452,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			new
 				iVehicleID = PlayerVehicleInfo[playerid][listitem][pvId];
 
-			if((!IsVehicleOccupied(iVehicleID) || IsPlayerInVehicle(playerid, iVehicleID)) && !IsVehicleInTow(iVehicleID) && !PlayerVehicleInfo[playerid][listitem][pvBeingPickLocked]) {
+			if((!NGGIsVehicleOccupied(iVehicleID) || IsPlayerInVehicle(playerid, iVehicleID)) && !IsVehicleInTow(iVehicleID) && !PlayerVehicleInfo[playerid][listitem][pvBeingPickLocked]) {
 
 				new
 					Float: vehiclehealth;
@@ -2706,7 +2708,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		carid = strval(caridstr);
 		if(DynVehicleInfo[carid][gv_iSpawnedID] != INVALID_VEHICLE_ID && !DynVehicleInfo[carid][gv_iDisabled])
 		{
-			if((!IsVehicleOccupied(DynVehicleInfo[carid][gv_iSpawnedID]) || IsPlayerInVehicle(playerid, DynVehicleInfo[carid][gv_iSpawnedID])) && !IsVehicleInTow(DynVehicleInfo[carid][gv_iSpawnedID]))
+			if((!NGGIsVehicleOccupied(DynVehicleInfo[carid][gv_iSpawnedID]) || IsPlayerInVehicle(playerid, DynVehicleInfo[carid][gv_iSpawnedID])) && !IsVehicleInTow(DynVehicleInfo[carid][gv_iSpawnedID]))
 			{
 				new Float: vHealth;
 				GetVehicleHealth(DynVehicleInfo[carid][gv_iSpawnedID], vHealth);

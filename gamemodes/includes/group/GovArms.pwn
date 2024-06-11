@@ -110,7 +110,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				new wepid = GetPVarInt(playerid, "_GovGun");
 				if(arrGroupData[iGroupID][g_iBudget] < arrWeaponCosts[wepid]) return SendClientMessageEx(playerid, COLOR_GRAD1, "The government doesn't have enough funds to pay you.");
 				GivePlayerCash(playerid, arrWeaponCosts[wepid]);
-				RemovePlayerWeapon(playerid, wepid);
+				NGGRemovePlayerWeapon(playerid, wepid);
 				arrGroupData[iGroupID][g_iBudget] -= arrWeaponCosts[wepid];
 	            format(szMiscArray, sizeof(szMiscArray), "%s sold their %s at a cost of $%d to %s's budget fund.",GetPlayerNameEx(playerid), Weapon_ReturnName(wepid), arrWeaponCosts[wepid], arrGroupData[iGroupID][g_szGroupName]);
 				GroupPayLog(iGroupID, szMiscArray);

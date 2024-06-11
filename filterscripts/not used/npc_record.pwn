@@ -7,7 +7,7 @@
 
 #pragma tabsize 0
 
-#include <a_samp>
+#include <open.mp>
 #include <core>
 #include <float>
 

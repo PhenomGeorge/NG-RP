@@ -521,7 +521,7 @@ Dialog:veh_options(playerid, response, listitem, inputtext[]) {
 		switch(listitem) {
 			case 0: {
 				if((veh = CrateVehicle[carid][cvSpawnID]) != INVALID_VEHICLE_ID) {
-				 	if((!IsVehicleOccupied(veh) || IsPlayerInVehicle(playerid, veh)) && !IsVehicleInTow(veh)) {
+				 	if((!NGGIsVehicleOccupied(veh) || IsPlayerInVehicle(playerid, veh)) && !IsVehicleInTow(veh)) {
 					 	if(CreateCount(carid) > 0) return SendClientMessageEx(playerid, COLOR_GREY, "Unable to despawn %s (Veh id: %d) as it's carrying crates.", VehicleName[CrateVehicle[carid][cvModel] - 400], veh);
 			    		GetVehicleHealth(veh, vHealth);
 						if(vHealth < 800) return SendClientMessageEx(playerid, COLOR_GREY, "This vehicle is too damaged to be stored.");
@@ -977,7 +977,7 @@ CMD:cvrespawn(playerid, params[]) {
 		if(strcmp(params, "all", true) == 0) {
 			for(new v = 0; v < MAX_CRATE_VEHCILES; v++) {
 				if(CrateVehicle[v][cvSpawnID] != INVALID_VEHICLE_ID) {
-					if(!IsVehicleOccupied(CrateVehicle[v][cvSpawnID]) && !CreateCount(v)) {
+					if(!NGGIsVehicleOccupied(CrateVehicle[v][cvSpawnID]) && !CreateCount(v)) {
 						SpawnCrateVeh(v);
 					}
 				}
@@ -999,7 +999,7 @@ CMD:cvrespawn(playerid, params[]) {
 			}
 			for(new v = 0; v < MAX_CRATE_VEHCILES; v++) {
 				if(CrateVehicle[v][cvSpawnID] != INVALID_VEHICLE_ID && CrateVehicle[v][cvGroupID] == strval(params)) {
-					if(!IsVehicleOccupied(CrateVehicle[v][cvSpawnID]) && !CreateCount(v)) {
+					if(!NGGIsVehicleOccupied(CrateVehicle[v][cvSpawnID]) && !CreateCount(v)) {
 						SpawnCrateVeh(v);
 					}
 				}

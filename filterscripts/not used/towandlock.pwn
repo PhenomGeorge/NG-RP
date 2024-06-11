@@ -4,7 +4,7 @@
 //   Created by zeruel_angel
 //    Locks added by Sew_Sumi
 //-------------------------------------------
-#include <a_samp>
+#include <open.mp>
 
 new TowTruckers=0;
 new IsTowTrucker[MAX_PLAYERS];

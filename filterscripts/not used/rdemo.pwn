@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 #define COLOR_WHITE 0xFFFFFFAA
 
 new status, rocket, usingrocket[MAX_PLAYERS], vehicle,  player, timer;

@@ -148,8 +148,8 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			new iPMenuItem = GetPVarInt(playerid, "PMenuItem");
 			if(iPMenuItem != 0) {
 				SetPVarInt(playerid, "PMenuItem", iPMenuItem-1);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1], 0x22222266);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1], 0x22222266);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1]);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem]);
 				PlayerTextDrawShow(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1]);
@@ -163,8 +163,8 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			new iPMenuItem = GetPVarInt(playerid, "PMenuItem");
 			if(iPMenuItem < 8) { // max menu item
 				SetPVarInt(playerid, "PMenuItem", GetPVarInt(playerid, "PMenuItem")+1);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1], 0x22222266);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1], 0x22222266);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1]);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem]);
 				PlayerTextDrawShow(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1]);
@@ -229,7 +229,7 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 Phone_SelectMenu(playerid) {
 
 	new iPMenuItem = GetPVarInt(playerid, "PMenuItem");
-	PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0x00000000);
+	PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0x00000000);
 	switch(iPMenuItem) {
 		case 0: Phone_Call(playerid);
 		case 1: Phone_Contacts(playerid);
@@ -1115,7 +1115,7 @@ Phone_PhoneColor(playerid)
 		case 8: color = 0x4C4CFFFF;
 		case 9: color = 0xC2E0FFFF;
 	}
-	PlayerTextDrawColor(playerid, phone_PTextDraw[playerid][1], color);
+	PlayerTextDrawColour(playerid, phone_PTextDraw[playerid][1], color);
 	/*
 	for(new i = 6; i < 13; ++i)	{
 
@@ -1911,142 +1911,142 @@ Phone_InitTD(playerid) {
 	*/
 
 	phone_PTextDraw[playerid][0] = CreatePlayerTextDraw(playerid,501.000000, 243.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][0], 100);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][0], 100);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][0], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][0], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][0], 673720575);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][0], 673720575);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][0], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][0], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][0], 0);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][0], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][0], 100);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][0], 100);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][0], 87.000000, 164.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][0], 0);
 
 	phone_PTextDraw[playerid][1] = CreatePlayerTextDraw(playerid,502.000000, 245.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][1], 100);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][1], 100);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][1], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][1], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][1], 100);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][1], 100);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][1], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][1], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][1], 0);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][1], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][1], 100);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][1], 100);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][1], 84.000000, 159.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][1], 0);
 
 	phone_PTextDraw[playerid][2] = CreatePlayerTextDraw(playerid,507.000000, 252.000000, "LD_DUAL:Health");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][2], 100);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][2], 100);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][2], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][2], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][2], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][2], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][2], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][2], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][2], 0);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][2], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][2], 1684301055);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][2], 1684301055);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][2], 75.000000, 134.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][2], 0);
 
 	phone_PTextDraw[playerid][3] = CreatePlayerTextDraw(playerid,508.000000, 394.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][3], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][3], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][3], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][3], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][3], 182848000);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][3], 182848000);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][3], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][3], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][3], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][3], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][3], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][3], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][3], 20.000000, 4.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][3], 0);
 
 	phone_PTextDraw[playerid][4] = CreatePlayerTextDraw(playerid,562.000000, 394.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][4], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][4], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][4], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][4], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][4], -938863361);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][4], -938863361);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][4], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][4], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][4], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][4], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][4], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][4], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][4], 20.000000, 4.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][4], 0);
 
 	phone_PTextDraw[playerid][5] = CreatePlayerTextDraw(playerid,537.000000, 395.000000, "LD_DUAL:white"); // background
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][5], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][5], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][5], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][5], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][5], 1684306175);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][5], 1684306175);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][5], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][5], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][5], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][5], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][5], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][5], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][5], 17.000000, 3.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][5], 0);
 
 
 	phone_PTextDraw[playerid][6] = CreatePlayerTextDraw(playerid,571.000000, 376.000000, "cancel");
 	PlayerTextDrawAlignment(playerid,phone_PTextDraw[playerid][6], 2);
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][6], 673720520);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][6], 673720520);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][6], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][6], 0.150000, 0.899999);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][6], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][6], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][6], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][6], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][6], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][6], 673720470);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][6], 673720470);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][6], 578.000000, -25.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][6], 0);
 
 	phone_PTextDraw[playerid][7] = CreatePlayerTextDraw(playerid,544.000000, 253.000000, "09:10");
 	PlayerTextDrawAlignment(playerid,phone_PTextDraw[playerid][7], 2);
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][7], 20);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][7], 20);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][7], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][7], 0.189999, 0.599999);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][7], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][7], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][7], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][7], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][7], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][7], 336860370);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][7], 336860370);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][7], 250.000000, -82.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][7], 0);
 
 	phone_PTextDraw[playerid][8] = CreatePlayerTextDraw(playerid,567.000000, 255.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][8], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][8], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][8], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][8], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][8], 184489215);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][8], 184489215);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][8], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][8], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][8], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][8], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][8], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][8], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][8], 10.000000, 2.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][8], 0);
 
 	phone_PTextDraw[playerid][9] = CreatePlayerTextDraw(playerid,575.000000, 255.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][9], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][9], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][9], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][9], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][9], 255);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][9], 255);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][9], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][9], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][9], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][9], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][9], 1010580735);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][9], 1010580735);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][9], 2.000000, 2.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][9], 0);
 
 	phone_PTextDraw[playerid][10] = CreatePlayerTextDraw(playerid,511.000000, 252.000000, "T");
 	PlayerTextDrawAlignment(playerid,phone_PTextDraw[playerid][10], 2);
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][10], 20);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][10], 20);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][10], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][10], 0.239999, 0.799998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][10], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][10], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][10], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][10], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][10], 1);
@@ -2054,161 +2054,161 @@ Phone_InitTD(playerid) {
 
 	phone_PTextDraw[playerid][11] = CreatePlayerTextDraw(playerid,518.000000, 376.000000, "select");
 	PlayerTextDrawAlignment(playerid,phone_PTextDraw[playerid][11], 2);
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][11], 673720520);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][11], 673720520);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][11], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][11], 0.150000, 0.899999);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][11], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][11], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][11], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][11], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][11], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][11], 673720470);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][11], 673720470);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][11], 578.000000, -25.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][11], 0);
 
 	phone_PTextDraw[playerid][12] = CreatePlayerTextDraw(playerid,510.000000, 266.000000, "Call");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][12], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][12], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][12], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][12], 0.170000, 0.999998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][12], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][12], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][12], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][12], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][12], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][12], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][12], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][12], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][12], 0);
 
 	phone_PTextDraw[playerid][13] = CreatePlayerTextDraw(playerid,510.000000, 278.000000, "Contacts");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][13], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][13], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][13], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][13], 0.170000, 0.999998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][13], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][13], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][13], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][13], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][13], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][13], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][13], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][13], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][13], 0);
 
 	phone_PTextDraw[playerid][14] = CreatePlayerTextDraw(playerid,510.000000, 290.000000, "Events");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][14], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][14], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][14], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][14], 0.170000, 0.999998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][14], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][14], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][14], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][14], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][14], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][14], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][14], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][14], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][14], 0);
 
 	phone_PTextDraw[playerid][15] = CreatePlayerTextDraw(playerid,510.000000, 302.000000, "Advertisements");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][15], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][15], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][15], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][15], 0.170000, 0.999998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][15], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][15], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][15], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][15], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][15], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][15], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][15], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][15], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][15], 0);
 
 	phone_PTextDraw[playerid][16] = CreatePlayerTextDraw(playerid,510.000000, 314.000000, "Music");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][16], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][16], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][16], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][16], 0.170000, 0.999998);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][16], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][16], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][16], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][16], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][16], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][16], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][16], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][16], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][16], 0);
 
 	phone_PTextDraw[playerid][17] = CreatePlayerTextDraw(playerid,510.000000, 326.000000, "Videos");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][17], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][17], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][17], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][17], 0.170000, 0.999997);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][17], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][17], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][17], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][17], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][17], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][17], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][17], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][17], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][17], 0);
 
 	phone_PTextDraw[playerid][18] = CreatePlayerTextDraw(playerid,510.000000, 338.000000, "Doogle Maps");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][18], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][18], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][18], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][18], 0.170000, 0.999997);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][18], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][18], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][18], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][18], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][18], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][18], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][18], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][18], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][18], 0);
 
 	phone_PTextDraw[playerid][19] = CreatePlayerTextDraw(playerid,510.000000, 350.000000, "Camera");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][19], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][19], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][19], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][19], 0.170000, 0.999997);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][19], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][19], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][19], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][19], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][19], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][19], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][19], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][19], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][19], 0);
 
 	phone_PTextDraw[playerid][20] = CreatePlayerTextDraw(playerid,510.000000, 362.000000, "Settings");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][20], 0x00000000);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][20], 0x00000000);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][20], 1);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][20], 0.170000, 0.999997);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][20], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][20], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][20], 1);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][20], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][20], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][20], 0x00000000);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][20], 0x00000000);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][20], 578.000000, -61.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][20], 0);
 
 	phone_PTextDraw[playerid][21] = CreatePlayerTextDraw(playerid,514.000000, 258.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][21], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][21], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][21], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][21], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][21], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][21], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][21], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][21], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][21], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][21], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][21], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][21], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][21], 1.000000, -2.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][21], 0);
 
 	phone_PTextDraw[playerid][22] = CreatePlayerTextDraw(playerid,516.000000, 258.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][22], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][22], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][22], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][22], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][22], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][22], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][22], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][22], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][22], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][22], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][22], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][22], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][22], 1.000000, -3.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][22], 0);
 
 	phone_PTextDraw[playerid][23] = CreatePlayerTextDraw(playerid,518.000000, 258.000000, "LD_DUAL:white");
-	PlayerTextDrawBackgroundColor(playerid,phone_PTextDraw[playerid][23], 255);
+	PlayerTextDrawBackgroundColour(playerid,phone_PTextDraw[playerid][23], 255);
 	PlayerTextDrawFont(playerid,phone_PTextDraw[playerid][23], 4);
 	PlayerTextDrawLetterSize(playerid,phone_PTextDraw[playerid][23], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid,phone_PTextDraw[playerid][23], -1);
+	PlayerTextDrawColour(playerid,phone_PTextDraw[playerid][23], -1);
 	PlayerTextDrawSetOutline(playerid,phone_PTextDraw[playerid][23], 0);
 	PlayerTextDrawSetProportional(playerid,phone_PTextDraw[playerid][23], 1);
 	PlayerTextDrawSetShadow(playerid,phone_PTextDraw[playerid][23], 1);
 	PlayerTextDrawUseBox(playerid,phone_PTextDraw[playerid][23], 1);
-	PlayerTextDrawBoxColor(playerid,phone_PTextDraw[playerid][23], 255);
+	PlayerTextDrawBoxColour(playerid,phone_PTextDraw[playerid][23], 255);
 	PlayerTextDrawTextSize(playerid,phone_PTextDraw[playerid][23], 1.000000, -5.000000);
 	PlayerTextDrawSetSelectable(playerid,phone_PTextDraw[playerid][23], 0);
 }

@@ -32,7 +32,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-stock SQLUpdateBuild(const query[], const table[], sqlplayerid)
+stock SQLUpdateBuild(query[], const table[], sqlplayerid)
 {
 	new querylen = strlen(query);
 	if (!query[0]) {
@@ -50,7 +50,7 @@ stock SQLUpdateBuild(const query[], const table[], sqlplayerid)
 	return 1;
 }
 
-stock SQLUpdateFinish(const query[], const table[], sqlplayerid)
+stock SQLUpdateFinish(query[], const table[], sqlplayerid)
 {
 	if (strcmp(query, "WHERE id=", false) == 0) mysql_tquery(MainPipeline, query, "OnQueryFinish", "i", SENDDATA_THREAD);
 	else
@@ -64,7 +64,7 @@ stock SQLUpdateFinish(const query[], const table[], sqlplayerid)
 	return 1;
 }
 
-stock SaveInteger(const query[], const table[], sqlid, const Value[], Integer)
+stock SaveInteger(query[], const table[], sqlid, const Value[], Integer)
 {
 	SQLUpdateBuild(query, table, sqlid);
 	new updval[64];
@@ -74,7 +74,7 @@ stock SaveInteger(const query[], const table[], sqlid, const Value[], Integer)
 }
 
 
-stock SaveString(const query[], const table[], sqlid, const Value[], const String[])
+stock SaveString(query[], const table[], sqlid, const Value[], const String[])
 {
 	SQLUpdateBuild(query, table, sqlid);
 	new escapedstring[160], string[160];
@@ -84,7 +84,7 @@ stock SaveString(const query[], const table[], sqlid, const Value[], const Strin
 	return 1;
 }
 
-stock SaveFloat(const query[], const table[], sqlid, const Value[], Float:Number)
+stock SaveFloat(query[], const table[], sqlid, const Value[], Float:Number)
 {
 	new flotostr[32];
 	format(flotostr, sizeof(flotostr), "%0.2f", Number);
@@ -1182,7 +1182,7 @@ public OnQueryFinish(resultid, extraid, handleid)
 								}
 							}
 						}
-						SetTimerEx("KickEx", 1000, 0, "i", extraid);
+						SetTimerEx("KickEx", 1000, false, "i", extraid);
 						format(string, sizeof(string), "%s failed whitelist auth. Secure IP: %s | Connected IP: %s", GetPlayerNameEx(extraid), secureip, GetPlayerIpEx(extraid));
 						Log("logs/whitelist.log", string);
 						return true;
@@ -2095,7 +2095,7 @@ stock IsAdminSpawnedVehicle(vehicleid)
 }
 
 // credits to Luk0r
-stock MySQLUpdateBuild(const query[], sqlplayerid)
+stock MySQLUpdateBuild(query[], sqlplayerid)
 {
 	new querylen = strlen(query);
 	if (!query[0]) {
@@ -2113,7 +2113,7 @@ stock MySQLUpdateBuild(const query[], sqlplayerid)
 	return 1;
 }
 
-stock MySQLUpdateFinish(const query[], sqlplayerid)
+stock MySQLUpdateFinish(query[], sqlplayerid)
 {
 	if (strcmp(query, "WHERE id=", false) == 0) mysql_tquery(MainPipeline, query, "OnQueryFinish", "i", SENDDATA_THREAD);
 	else
@@ -2127,7 +2127,7 @@ stock MySQLUpdateFinish(const query[], sqlplayerid)
 	return 1;
 }
 
-stock SavePlayerInteger(const query[], sqlid, const Value[], Integer)
+stock SavePlayerInteger(query[], sqlid, const Value[], Integer)
 {
 	MySQLUpdateBuild(query, sqlid);
 	new updval[64];
@@ -2137,7 +2137,7 @@ stock SavePlayerInteger(const query[], sqlid, const Value[], Integer)
 }
 
 
-stock SavePlayerString(const query[], sqlid, const Value[], const String[])
+stock SavePlayerString(query[], sqlid, const Value[], const String[])
 {
 	MySQLUpdateBuild(query, sqlid);
 	new escapedstring[160], string[160];
@@ -2147,7 +2147,7 @@ stock SavePlayerString(const query[], sqlid, const Value[], const String[])
 	return 1;
 }
 
-stock SavePlayerFloat(const query[], sqlid, const Value[], Float:Number)
+stock SavePlayerFloat(query[], sqlid, const Value[], Float:Number)
 {
 	new flotostr[32];
 	mysql_format(MainPipeline, flotostr, sizeof(flotostr), "%0.2f", Number);
@@ -6091,6 +6091,7 @@ public ExecuteShopQueue(playerid, id)
 					format(string, sizeof(string), "%s(%d) | Status set to 1 - 1", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid));
 					Log("logs/shopdebug.log", string);
 					OnPlayerStatsUpdate(playerid);
+					index++;
 					return SendClientMessageEx(playerid, COLOR_CYAN, "* Use /myvouchers to check and use your vouchers at any time!");
 				}
 			}
@@ -6117,6 +6118,7 @@ public ExecuteShopQueue(playerid, id)
 					format(string, sizeof(string), "%s(%d) | Status set to 1 - 2", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid));
 					Log("logs/shopdebug.log", string);
 					OnPlayerStatsUpdate(playerid);
+					index++;
 					return 1;
 				}
 			}
@@ -6472,7 +6474,7 @@ public CheckTrunkContents(playerid)
 	cache_get_value_name_int(0, "pvWeapon2", TrunkWeaps[2]);
 	new
 		i = 0;
-	while (i < 3 && (!TrunkWeaps[i] || PlayerInfo[playerid][pGuns][GetWeaponSlot(TrunkWeaps[i])] ==  TrunkWeaps[i]))
+	while (i < 3 && (!TrunkWeaps[i] || PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(TrunkWeaps[i])] ==  TrunkWeaps[i]))
 	{
 		i++;
 	}

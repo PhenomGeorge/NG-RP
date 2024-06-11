@@ -3,7 +3,7 @@
 #define YSI_NO_OPTIMISATION_MESSAGE
 #define YSI_NO_VERSION_CHECK
 
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 #include <YSI_Data\y_iterate>
 

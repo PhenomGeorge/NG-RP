@@ -1,6 +1,6 @@
 //#define dpsmap
 
-#include <a_samp>
+#include <open.mp>
 #include <a_http>
 #if defined dpsmap
 #include <djson>

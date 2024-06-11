@@ -1614,7 +1614,7 @@ stock FindGunInVehicleForPlayer(ownerid, slot, playerid)
 {
 	new
 		i = 0;
-	while (i < (PlayerVehicleInfo[ownerid][slot][pvWepUpgrade] + 1) && (!PlayerVehicleInfo[ownerid][slot][pvWeapons][i] || PlayerInfo[playerid][pGuns][GetWeaponSlot(PlayerVehicleInfo[ownerid][slot][pvWeapons][i])] == PlayerVehicleInfo[ownerid][slot][pvWeapons][i]))
+	while (i < (PlayerVehicleInfo[ownerid][slot][pvWepUpgrade] + 1) && (!PlayerVehicleInfo[ownerid][slot][pvWeapons][i] || PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(PlayerVehicleInfo[ownerid][slot][pvWeapons][i])] == PlayerVehicleInfo[ownerid][slot][pvWeapons][i]))
 	{
 		i++;
 	}
@@ -2018,7 +2018,7 @@ CMD:trunkput(playerid, params[])
 	if(PlayerVehicleInfo[playerid][pvid][pvWeapons][slot-1] == 0)
 	{
 		PlayerVehicleInfo[playerid][pvid][pvWeapons][slot-1] = weapon;
-		RemovePlayerWeapon(playerid, weapon);
+		NGGRemovePlayerWeapon(playerid, weapon);
 		g_mysql_SaveVehicle(playerid, pvid);
 	}
 	return 1;
@@ -2272,7 +2272,7 @@ CMD:storegun(playerid, params[])
 				if(HouseInfo[i][hWeapons][slot-1] == 0)
 				{
 					HouseInfo[i][hWeapons][slot-1] = weapon;
-					RemovePlayerWeapon(playerid, weapon);
+					NGGRemovePlayerWeapon(playerid, weapon);
 					SaveHouse(i);
 					return 1;
 				}

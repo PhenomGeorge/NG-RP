@@ -2,7 +2,7 @@
 // Example use of chat above player's head
 //
 
-#include <a_samp>
+#include <open.mp>
 #include "../include/gl_common.inc"
 
 #define MESSAGE_COLOR 		  0xEEEEEEFF

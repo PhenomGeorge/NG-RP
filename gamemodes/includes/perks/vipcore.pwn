@@ -1034,7 +1034,7 @@ CMD:respawnvipcars(playerid, params[])
 	{
 		for(new i = 0; i < sizeof(VIPVehicles); i++)
 		{
-			if(!IsVehicleOccupied(VIPVehicles[i]))
+			if(!NGGIsVehicleOccupied(VIPVehicles[i]))
 			{
 				SetVehicleVirtualWorld(VIPVehicles[i], 0);
 				LinkVehicleToInterior(VIPVehicles[i], 0);

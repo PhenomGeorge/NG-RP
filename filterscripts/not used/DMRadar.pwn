@@ -1,4 +1,4 @@
-#include <a_samp>
+#include <open.mp>
 
 // Sews DMRadar... A simple set-up to identify DM, and watching who is responsible.
 

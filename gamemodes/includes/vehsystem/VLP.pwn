@@ -72,12 +72,12 @@ DestroyVLPTextDraws(playerid) {
 	PlayerTextDrawLetterSize(playerid, VLPTextDraws[playerid][0], 0.449999, 1.600000);
 	PlayerTextDrawTextSize(playerid, VLPTextDraws[playerid][0], 342.399902, -321.813293);
 	PlayerTextDrawAlignment(playerid, VLPTextDraws[playerid][0], 3);
-	PlayerTextDrawColor(playerid, VLPTextDraws[playerid][0], 41215);
+	PlayerTextDrawColour(playerid, VLPTextDraws[playerid][0], 41215);
 	PlayerTextDrawUseBox(playerid, VLPTextDraws[playerid][0], true);
-	PlayerTextDrawBoxColor(playerid, VLPTextDraws[playerid][0], 77);
+	PlayerTextDrawBoxColour(playerid, VLPTextDraws[playerid][0], 77);
 	PlayerTextDrawSetShadow(playerid, VLPTextDraws[playerid][0], 0);
 	PlayerTextDrawSetOutline(playerid, VLPTextDraws[playerid][0], 1);
-	PlayerTextDrawBackgroundColor(playerid, VLPTextDraws[playerid][0], 154);
+	PlayerTextDrawBackgroundColour(playerid, VLPTextDraws[playerid][0], 154);
 	PlayerTextDrawFont(playerid, VLPTextDraws[playerid][0], 3);
 	PlayerTextDrawSetProportional(playerid, VLPTextDraws[playerid][0], 1);
 
@@ -85,12 +85,12 @@ DestroyVLPTextDraws(playerid) {
 	PlayerTextDrawLetterSize(playerid, VLPTextDraws[playerid][1], 0.449999, 1.600000);
 	PlayerTextDrawTextSize(playerid, VLPTextDraws[playerid][1], -585.599975, 212.053375);
 	PlayerTextDrawAlignment(playerid, VLPTextDraws[playerid][1], 3);
-	PlayerTextDrawColor(playerid, VLPTextDraws[playerid][1], -1805713409);
+	PlayerTextDrawColour(playerid, VLPTextDraws[playerid][1], -1805713409);
 	PlayerTextDrawUseBox(playerid, VLPTextDraws[playerid][1], true);
-	PlayerTextDrawBoxColor(playerid, VLPTextDraws[playerid][1], 77);
+	PlayerTextDrawBoxColour(playerid, VLPTextDraws[playerid][1], 77);
 	PlayerTextDrawSetShadow(playerid, VLPTextDraws[playerid][1], 0);
 	PlayerTextDrawSetOutline(playerid, VLPTextDraws[playerid][1], 1);
-	PlayerTextDrawBackgroundColor(playerid, VLPTextDraws[playerid][1], 255);
+	PlayerTextDrawBackgroundColour(playerid, VLPTextDraws[playerid][1], 255);
 	PlayerTextDrawFont(playerid, VLPTextDraws[playerid][1], 3);
 	PlayerTextDrawSetProportional(playerid, VLPTextDraws[playerid][1], 1);
 
@@ -98,12 +98,12 @@ DestroyVLPTextDraws(playerid) {
 	PlayerTextDrawLetterSize(playerid, VLPTextDraws[playerid][2], 0.449999, 1.600000);
 	PlayerTextDrawTextSize(playerid, VLPTextDraws[playerid][2], -585.599975, 212.053375);
 	PlayerTextDrawAlignment(playerid, VLPTextDraws[playerid][2], 3);
-	PlayerTextDrawColor(playerid, VLPTextDraws[playerid][2], -1);
+	PlayerTextDrawColour(playerid, VLPTextDraws[playerid][2], -1);
 	PlayerTextDrawUseBox(playerid, VLPTextDraws[playerid][2], true);
-	PlayerTextDrawBoxColor(playerid, VLPTextDraws[playerid][2], 77);
+	PlayerTextDrawBoxColour(playerid, VLPTextDraws[playerid][2], 77);
 	PlayerTextDrawSetShadow(playerid, VLPTextDraws[playerid][2], 0);
 	PlayerTextDrawSetOutline(playerid, VLPTextDraws[playerid][2], -1);
-	PlayerTextDrawBackgroundColor(playerid, VLPTextDraws[playerid][2], 255);
+	PlayerTextDrawBackgroundColour(playerid, VLPTextDraws[playerid][2], 255);
 	PlayerTextDrawFont(playerid, VLPTextDraws[playerid][2], 3);
 	PlayerTextDrawSetProportional(playerid, VLPTextDraws[playerid][2], 1);
 
@@ -111,12 +111,12 @@ DestroyVLPTextDraws(playerid) {
 	PlayerTextDrawLetterSize(playerid, VLPTextDraws[playerid][3], 0.449999, 1.600000);
 	PlayerTextDrawTextSize(playerid, VLPTextDraws[playerid][3], 172.000000, -70.933380);
 	PlayerTextDrawAlignment(playerid, VLPTextDraws[playerid][3], 2);
-	PlayerTextDrawColor(playerid, VLPTextDraws[playerid][3], 104202495);
+	PlayerTextDrawColour(playerid, VLPTextDraws[playerid][3], 104202495);
 	PlayerTextDrawUseBox(playerid, VLPTextDraws[playerid][3], true);
-	PlayerTextDrawBoxColor(playerid, VLPTextDraws[playerid][3], 77);
+	PlayerTextDrawBoxColour(playerid, VLPTextDraws[playerid][3], 77);
 	PlayerTextDrawSetShadow(playerid, VLPTextDraws[playerid][3], 0);
 	PlayerTextDrawSetOutline(playerid, VLPTextDraws[playerid][3], 1);
-	PlayerTextDrawBackgroundColor(playerid, VLPTextDraws[playerid][3], 51);
+	PlayerTextDrawBackgroundColour(playerid, VLPTextDraws[playerid][3], 51);
 	PlayerTextDrawFont(playerid, VLPTextDraws[playerid][3], 1);
 	PlayerTextDrawSetProportional(playerid, VLPTextDraws[playerid][3], 1);
 }*/

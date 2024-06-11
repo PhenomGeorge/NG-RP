@@ -829,7 +829,7 @@ CMD:knife(playerid, params[])
 		}
 		else {
 			if(PlayerInfo[playerid][pGuns][1] == WEAPON_KNIFE) {
-				RemovePlayerWeapon(playerid, 4); // Remove Knife
+				NGGRemovePlayerWeapon(playerid, 4); // Remove Knife
 				SetPVarInt(playerid, "HidingKnife", 1);
 				SendClientMessageEx(playerid, COLOR_YELLOW, "You have hidden your knife.");
 			}

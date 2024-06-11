@@ -19,7 +19,7 @@
 
 #define FILTERSCRIPT
 
-#include <a_samp>
+#include <open.mp>
 #include <sscanf2>
 #include <streamer>
 #include <YSI_Data\y_iterate>

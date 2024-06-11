@@ -1194,65 +1194,65 @@ TurfWars_LoadPGUI(playerid) {
 
 	TW_PTextDraws[playerid][0] = CreatePlayerTextDraw(playerid, 543.000000, 190.000000, ""); // Group Name
 	PlayerTextDrawAlignment(playerid, TW_PTextDraws[playerid][0], 2);
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][0], 60);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][0], 60);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][0], 1);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][0], 0.180000, 0.899999);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][0], 16777215);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][0], 16777215);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][0], 1);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][0], 1);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][0], 0);
 
 	TW_PTextDraws[playerid][1] = CreatePlayerTextDraw(playerid, 510.000000, 211.000000, ""); // Turf Health
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][1], 60);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][1], 60);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][1], 1);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][1], 0.180000, 0.899999);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][1], -56);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][1], -56);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][1], 1);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][1], 1);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][1], 0);
 
 	TW_PTextDraws[playerid][2] = CreatePlayerTextDraw(playerid, 543.000000, 200.000000, ""); // Turf Name
 	PlayerTextDrawAlignment(playerid, TW_PTextDraws[playerid][2], 2);
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][2], 60);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][2], 60);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][2], 1);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][2], 0.180000, 0.899999);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][2], -56);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][2], -56);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][2], 1);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][2], 1);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][2], 0);
 
 	TW_PTextDraws[playerid][3] = CreatePlayerTextDraw(playerid, 530.000000, 210.000000, "hud:radar_enemyAttack");
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][3], 255);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][3], 255);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][3], 4);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][3], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][3], -1);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][3], -1);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][3], 0);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][3], 1);
 	PlayerTextDrawSetShadow(playerid, TW_PTextDraws[playerid][3], 1);
 	PlayerTextDrawUseBox(playerid, TW_PTextDraws[playerid][3], 1);
-	PlayerTextDrawBoxColor(playerid, TW_PTextDraws[playerid][3], 255);
+	PlayerTextDrawBoxColour(playerid, TW_PTextDraws[playerid][3], 255);
 	PlayerTextDrawTextSize(playerid, TW_PTextDraws[playerid][3], 10.000000, 10.000000);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][3], 0);
 	
 	TW_PTextDraws[playerid][4] = CreatePlayerTextDraw(playerid, 571.000000, 211.000000, ""); // Turf Level
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][4], 60);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][4], 60);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][4], 1);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][4], 0.180000, 0.899999);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][4], -56);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][4], -56);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][4], 1);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][4], 1);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][4], 0);
 
 	TW_PTextDraws[playerid][5] = CreatePlayerTextDraw(playerid, 544.000000, 210.000000, "hud:radar_enemyAttack");
-	PlayerTextDrawBackgroundColor(playerid, TW_PTextDraws[playerid][5], 255);
+	PlayerTextDrawBackgroundColour(playerid, TW_PTextDraws[playerid][5], 255);
 	PlayerTextDrawFont(playerid, TW_PTextDraws[playerid][5], 4);
 	PlayerTextDrawLetterSize(playerid, TW_PTextDraws[playerid][5], 0.500000, 1.000000);
-	PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][5], -1);
+	PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][5], -1);
 	PlayerTextDrawSetOutline(playerid, TW_PTextDraws[playerid][5], 0);
 	PlayerTextDrawSetProportional(playerid, TW_PTextDraws[playerid][5], 1);
 	PlayerTextDrawSetShadow(playerid, TW_PTextDraws[playerid][5], 1);
 	PlayerTextDrawUseBox(playerid, TW_PTextDraws[playerid][5], 1);
-	PlayerTextDrawBoxColor(playerid, TW_PTextDraws[playerid][5], 255);
+	PlayerTextDrawBoxColour(playerid, TW_PTextDraws[playerid][5], 255);
 	PlayerTextDrawTextSize(playerid, TW_PTextDraws[playerid][5], 10.000000, 10.000000);
 	PlayerTextDrawSetSelectable(playerid, TW_PTextDraws[playerid][5], 0);
 }
@@ -1400,7 +1400,7 @@ TurfWars_SyncGUI(playerid, iTurfID) {
 				PlayerTextDrawHide(p, TW_PTextDraws[p][3]);
 				PlayerTextDrawHide(p, TW_PTextDraws[p][4]);
 				PlayerTextDrawHide(p, TW_PTextDraws[p][5]);
-				PlayerTextDrawColor(p, TW_PTextDraws[p][0], 0xEEEEEE88);
+				PlayerTextDrawColour(p, TW_PTextDraws[p][0], 0xEEEEEE88);
 				format(szMiscArray, sizeof(szMiscArray), "Disabled (ID %d)", iTurfID);
 				PlayerTextDrawSetString(p, TW_PTextDraws[p][0], szMiscArray);
 				PlayerTextDrawHide(p, TW_PTextDraws[p][0]);
@@ -1423,17 +1423,17 @@ TurfWars_SyncGUI(playerid, iTurfID) {
 			}
 
 			if(arrTurfWars[iTurfID][tw_iGroupID] == INVALID_GROUP_ID) {
-				PlayerTextDrawColor(p, TW_PTextDraws[p][0], 0xEEEEEE88);
+				PlayerTextDrawColour(p, TW_PTextDraws[p][0], 0xEEEEEE88);
 				PlayerTextDrawSetString(p, TW_PTextDraws[p][0], "Neutral");
 			}
 			else {
 
-				PlayerTextDrawColor(p, TW_PTextDraws[p][0], arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_hDutyColour] * 256 + 200);
+				PlayerTextDrawColour(p, TW_PTextDraws[p][0], arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_hDutyColour] * 256 + 200);
 				if(Bit_State(arrTurfWarsBits[iTurfID], tw_bHeadquarter)) {
 					format(szMiscArray, sizeof(szMiscArray), "%s (HQ)", arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_szGroupName]);
 				}
 				else if(Bit_State(arrTurfWarsBits[iTurfID], tw_bShutdown)) {
-					PlayerTextDrawColor(p, TW_PTextDraws[p][0], 0xDDDDDD88);
+					PlayerTextDrawColour(p, TW_PTextDraws[p][0], 0xDDDDDD88);
 					format(szMiscArray, sizeof(szMiscArray), "%s (S)", arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_szGroupName]);
 				}
 				else strins(szMiscArray, arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_szGroupName], 0, sizeof(szMiscArray));
@@ -1474,7 +1474,7 @@ TurfWars_SyncGUI(playerid, iTurfID) {
 			PlayerTextDrawHide(playerid, TW_PTextDraws[playerid][3]);
 			PlayerTextDrawHide(playerid, TW_PTextDraws[playerid][4]);
 			PlayerTextDrawHide(playerid, TW_PTextDraws[playerid][5]);
-			PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][0], 0xEEEEEE88);
+			PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][0], 0xEEEEEE88);
 			format(szMiscArray, sizeof(szMiscArray), "Disabled (ID %d)", iTurfID);
 			PlayerTextDrawSetString(playerid, TW_PTextDraws[playerid][0], szMiscArray);
 			PlayerTextDrawHide(playerid, TW_PTextDraws[playerid][0]);
@@ -1497,12 +1497,12 @@ TurfWars_SyncGUI(playerid, iTurfID) {
 		}
 
 		if(arrTurfWars[iTurfID][tw_iGroupID] == INVALID_GROUP_ID) {
-			PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][0], 0xEEEEEE88);
+			PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][0], 0xEEEEEE88);
 			PlayerTextDrawSetString(playerid, TW_PTextDraws[playerid][0], "Neutral");
 		}
 		else {
 
-			PlayerTextDrawColor(playerid, TW_PTextDraws[playerid][0], arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_hDutyColour] * 256 + 200);
+			PlayerTextDrawColour(playerid, TW_PTextDraws[playerid][0], arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_hDutyColour] * 256 + 200);
 			if(Bit_State(arrTurfWarsBits[iTurfID], tw_bHeadquarter)) {
 				format(szMiscArray, sizeof(szMiscArray), "%s (HQ)", arrGroupData[arrTurfWars[iTurfID][tw_iGroupID]][g_szGroupName]);
 			}

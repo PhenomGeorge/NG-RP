@@ -1912,7 +1912,7 @@ Dialog:cgun_take(playerid, response, listitem, inputtext[]) {
 		new GunID = arrGroupData[group][g_iLockerGuns][listitem];
 		if(!GunID) return SendClientMessageEx(playerid, COLOR_WHITE, "Theres no weapon assigned to that slot!");
 		if(CrateBox[box][cbMats] < arrGroupData[group][g_iLockerCost][listitem]) return SendClientMessageEx(playerid, COLOR_GRAD2, "There isn't enough materials in the crate for that weapon!");
-		if(PlayerInfo[playerid][pGuns][GetWeaponSlot(GunID)] != GunID) {
+		if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(GunID)] != GunID) {
 			GivePlayerValidWeapon(playerid, GunID);
 			CrateBox[box][cbMats] -= arrGroupData[group][g_iLockerCost][listitem];
 			format(szMiscArray, sizeof(szMiscArray), "* %s reaches into the weapon crate box and takes out a %s.", GetPlayerNameEx(playerid), Weapon_ReturnName(GunID));

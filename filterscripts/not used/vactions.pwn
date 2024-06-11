@@ -21,7 +21,7 @@
 
 #define FILTERSCRIPT
 
-#include <a_samp>
+#include <open.mp>
 #include <core>
 #include <float>
 #include <zcmd>

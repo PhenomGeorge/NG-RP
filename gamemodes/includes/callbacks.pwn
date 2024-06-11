@@ -108,7 +108,7 @@ public OnVehicleSpawn(vehicleid) {
 			GetVehiclePos(InsidePlane[i], XB, YB, ZB);
 			if(ZB > 50.0)
 			{
-				PlayerInfo[i][pAGuns][GetWeaponSlot(46)] = 46;
+				PlayerInfo[i][pAGuns][NGGGetWeaponSlot(46)] = 46;
 				GivePlayerValidWeapon(i, 46);
 			}
 			PlayerInfo[i][pVW] = 0;
@@ -344,7 +344,7 @@ public OnPlayerUpdate(playerid)
     /*
     switch(pCurWeap) {
     	case 9, 16, 17, 18, 35, 36, 37, 38: {
-    		if(PlayerInfo[playerid][pGuns][GetWeaponSlot(pCurWeap)] != pCurWeap) {
+    		if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(pCurWeap)] != pCurWeap) {
 
     			if(GetPVarType(playerid, "IsInArena") || GetPVarType(playerid, "EventToken")) return 1;
 
@@ -415,8 +415,8 @@ public OnPlayerUpdate(playerid)
 			new iPMenuItem = GetPVarInt(playerid, "PMenuItem");
 			if(iPMenuItem != 0) {
 				SetPVarInt(playerid, "PMenuItem", iPMenuItem-1);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1], 0x22222266);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1], 0x22222266);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1]);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem]);
 				PlayerTextDrawShow(playerid, phone_PTextDraw[playerid][12 + iPMenuItem-1]);
@@ -430,8 +430,8 @@ public OnPlayerUpdate(playerid)
 			new iPMenuItem = GetPVarInt(playerid, "PMenuItem");
 			if(iPMenuItem < 9) { // max menu item
 				SetPVarInt(playerid, "PMenuItem", GetPVarInt(playerid, "PMenuItem")+1);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1], 0x22222266);
-				PlayerTextDrawBoxColor(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1], 0x22222266);
+				PlayerTextDrawBoxColour(playerid, phone_PTextDraw[playerid][12 + iPMenuItem], 0xFFFFFF00);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1]);
 				PlayerTextDrawHide(playerid, phone_PTextDraw[playerid][12 + iPMenuItem]);
 				PlayerTextDrawShow(playerid, phone_PTextDraw[playerid][12 + iPMenuItem+1]);
@@ -2244,7 +2244,7 @@ public OnPlayerDisconnect(playerid, reason)
 		for(new x; x < sizeof(EventKernel[EventStaff]); x++) {
 			if(EventKernel[EventStaff][x] == playerid) {
 				EventKernel[EventStaff][x] = INVALID_PLAYER_ID;
-				RemovePlayerWeapon(playerid, 38);
+				NGGRemovePlayerWeapon(playerid, 38);
 				break;
 			}
 		}
@@ -2659,7 +2659,7 @@ public OnVehicleDeath(vehicleid) {
 			GetVehiclePos(InsidePlane[i], XB, YB, ZB);
 			if(ZB > 50.0)
 			{
-				PlayerInfo[i][pAGuns][GetWeaponSlot(46)] = 46;
+				PlayerInfo[i][pAGuns][NGGGetWeaponSlot(46)] = 46;
 				GivePlayerValidWeapon(i, 46);
 			}
 			PlayerInfo[i][pVW] = 0;
@@ -4709,7 +4709,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		}
 		else if(IsAHelicopter(vehicleid))
 		{
-		    PlayerInfo[playerid][pAGuns][GetWeaponSlot(46)] = 46;
+		    PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(46)] = 46;
 			GivePlayerValidWeapon(playerid, 46);
 		}
 		else if(IsAnTaxi(vehicleid) || IsAnBus(vehicleid))
@@ -4779,7 +4779,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	}
 	if((newstate == 2 || newstate == 3 || newstate == 7 || newstate == 9) && pTazer{playerid} == 1)
 	{
-		RemovePlayerWeapon(playerid, 23);
+		NGGRemovePlayerWeapon(playerid, 23);
 		GivePlayerValidWeapon(playerid, pTazerReplace{playerid});
 		pTazer{playerid} = 0;
 	}
@@ -5748,7 +5748,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 
 					SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a pair of clothes from the prison shop for 500 credits.");
 				}
-				else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+				else return SendClientMessageEx(playerid, COLOR_GREY, "You do not have enough prison credits!");
 			}
 			else return 1;
 		}
@@ -5757,7 +5757,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 	return 1;
 }
 
-public OnPlayerClickPlayer(playerid, clickedplayerid, source)
+public OnPlayerClickPlayer(playerid, clickedplayerid, CLICK_SOURCE:source)
 {
 	if((PlayerInfo[playerid][pAdmin] >= 1 || PlayerInfo[playerid][pSMod] >= 2) && source == CLICK_SOURCE_SCOREBOARD)
 	{

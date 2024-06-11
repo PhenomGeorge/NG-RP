@@ -4,7 +4,7 @@
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Enjoy Using It!-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-#include <a_samp>
+#include <open.mp>
 #define LIGHTS 1515151
 new blue, blue2, red, red2, green, green2, white, white2, pink, pink2, yellow, yellow2, police, police2, interior, interior2, back, back2, front, front2, undercover, undercover2;
 new status[11];

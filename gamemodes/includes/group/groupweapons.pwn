@@ -130,7 +130,7 @@ Dialog:weapon_withdraw(playerid, response, listitem, inputtext[]) {
 			return 1;
 		}
 		if(arrGroupData[group][g_iLockerStock] < arrGroupData[group][g_iLockerCost][listitem]) return SendClientMessageEx(playerid, COLOR_RED, "Your locker doesn't have the materials to craft a %s.", Weapon_ReturnName(GunID));
-		if(PlayerInfo[playerid][pGuns][GetWeaponSlot(GunID)] != GunID) {
+		if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(GunID)] != GunID) {
 			arrGroupData[group][g_iLockerStock] -= arrGroupData[group][g_iLockerCost][listitem];
 			GivePlayerValidWeapon(playerid, GunID);
 			SendClientMessageEx(playerid, COLOR_WHITE, "You withdraw a %s from the locker.", Weapon_ReturnName(GunID));
@@ -157,11 +157,11 @@ Dialog:weapon_deposit(playerid, response, listitem, inputtext[]) {
 	    strmid(gid, inputtext, stpos+1, fpos);
 	    id = strval(gid);
 
-	    if(PlayerInfo[playerid][pGuns][GetWeaponSlot(id)] == 0) return SendClientMessageEx(playerid, COLOR_RED, "The weapon you tried to deposit doesn't exist!"), ShowGroupWeapons(playerid, PlayerInfo[playerid][pMember]);
-	    if(!CanDeposit(PlayerInfo[playerid][pGuns][GetWeaponSlot(id)])) return SendClientMessageEx(playerid, COLOR_RED, "You can't deposit that weapon!"), ShowGroupWeapons(playerid, PlayerInfo[playerid][pMember]); 
+	    if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(id)] == 0) return SendClientMessageEx(playerid, COLOR_RED, "The weapon you tried to deposit doesn't exist!"), ShowGroupWeapons(playerid, PlayerInfo[playerid][pMember]);
+	    if(!CanDeposit(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(id)])) return SendClientMessageEx(playerid, COLOR_RED, "You can't deposit that weapon!"), ShowGroupWeapons(playerid, PlayerInfo[playerid][pMember]); 
 	    IsInSlot(PlayerInfo[playerid][pMember], id, slot);
 	    if(slot == -1) return SendClientMessageEx(playerid, COLOR_GRAD2, "Your locker doesn't have that weapon so it can't be stored!"), DepositMenu(playerid, PlayerInfo[playerid][pMember]);
-		PlayerInfo[playerid][pGuns][GetWeaponSlot(id)] = 0;
+		PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(id)] = 0;
 		SetPlayerWeaponsEx(playerid);
 		SendClientMessageEx(playerid, COLOR_WHITE, "You have deposited a %s into the locker.", Weapon_ReturnName(id));
 		format(szMiscArray, sizeof(szMiscArray), "%s has deposited a %s into the locker.", GetPlayerNameEx(playerid), Weapon_ReturnName(id));
@@ -554,7 +554,7 @@ CMD:allow(playerid, params[]) {
 	}
 	if(locker == -1) return SendClientMessageEx(playerid, COLOR_GRAD2, "%s is no longer at a locker!", GetPlayerNameEx(target)), SendClientMessageEx(target, COLOR_GRAD2, "Your weapon request failed - Your not near any lockers!");
 	if(arrGroupData[PlayerInfo[target][pMember]][g_iLockerStock] < arrGroupData[PlayerInfo[target][pMember]][g_iLockerCost][LockerReq[target][1]]) return SendClientMessageEx(playerid, COLOR_RED, "Your locker doesn't have the materials to craft a %s.", Weapon_ReturnName(LockerReq[target][0]));
-	if(PlayerInfo[target][pGuns][GetWeaponSlot(LockerReq[target][0])] != LockerReq[target][0]) {
+	if(PlayerInfo[target][pGuns][NGGGetWeaponSlot(LockerReq[target][0])] != LockerReq[target][0]) {
 		arrGroupData[PlayerInfo[target][pMember]][g_iLockerStock] -= arrGroupData[PlayerInfo[target][pMember]][g_iLockerCost][LockerReq[target][1]];
 		GivePlayerValidWeapon(target, LockerReq[target][0]);
 		SendClientMessageEx(target, COLOR_WHITE, "You withdraw a %s from the locker - authorized by %s.", Weapon_ReturnName(LockerReq[target][0]), GetPlayerNameEx(playerid));

@@ -1,6 +1,6 @@
 // Furniture System - Empty Interiors 30 meters above the original (by Jingles)
 
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 
 public OnFilterScriptInit()

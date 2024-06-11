@@ -236,7 +236,7 @@ CMD:eventstaff(playerid, params[])
 					SetPlayerPos( playerid, EventKernel[ EventPositionX ], EventKernel[ EventPositionY ], EventKernel[ EventPositionZ ] );
 					SetPlayerInterior( playerid, EventKernel[ EventInterior ] );
 					SetPlayerVirtualWorld( playerid, EventKernel[ EventWorld ] );
-					PlayerInfo[playerid][pAGuns][GetWeaponSlot(38)] = 38;
+					PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(38)] = 38;
 					GivePlayerValidWeapon(playerid, 38);
 					EventKernel[EventStaff][i] = playerid;
 					GetHealth(playerid,health);
@@ -272,7 +272,7 @@ CMD:quitevent(playerid, params[])
         			SetPlayerFacingAngle(playerid, EventFloats[playerid][0]);
         			SetPlayerInterior(playerid,EventLastInt[playerid]);
         			Player_StreamPrep(playerid, EventFloats[playerid][1],EventFloats[playerid][2],EventFloats[playerid][3], FREEZE_TIME);
-        			RemovePlayerWeapon(playerid, 38);
+        			NGGRemovePlayerWeapon(playerid, 38);
         			for(new i = 0; i < 6; i++) {
         	   			EventFloats[playerid][i] = 0.0;
     	   			}
@@ -302,7 +302,7 @@ CMD:quitevent(playerid, params[])
         }
         EventLastVW[playerid] = 0;
         EventLastInt[playerid] = 0;
-        RemovePlayerWeapon(playerid, 38);
+        NGGRemovePlayerWeapon(playerid, 38);
 		health = GetPVarFloat(playerid, "pPreGodHealth");
 		SetHealth(playerid,health);
 		armor = GetPVarFloat(playerid, "pPreGodArmor");
@@ -334,7 +334,7 @@ CMD:quitevent(playerid, params[])
         				SetArmour(playerid, EventFloats[playerid][5]);
         			}
         			Player_StreamPrep(playerid, EventFloats[playerid][1],EventFloats[playerid][2],EventFloats[playerid][3], FREEZE_TIME);
-        			RemovePlayerWeapon(playerid, 38);
+        			NGGRemovePlayerWeapon(playerid, 38);
         			for(new i = 0; i < 6; i++) {
         	   			EventFloats[playerid][i] = 0.0;
     	   			}
@@ -368,7 +368,7 @@ CMD:quitevent(playerid, params[])
         }
         EventLastVW[playerid] = 0;
         EventLastInt[playerid] = 0;
-        RemovePlayerWeapon(playerid, 38);
+        NGGRemovePlayerWeapon(playerid, 38);
 		health = GetPVarFloat(playerid, "pPreGodHealth");
 		if(health > 0) {
 			SetHealth(playerid,health);
@@ -1096,7 +1096,7 @@ CMD:endevent(playerid, params[])
 					}
 					EventLastVW[i] = 0;
 					EventLastInt[i] = 0;
-					RemovePlayerWeapon(i, 38);
+					NGGRemovePlayerWeapon(i, 38);
 					health = GetPVarFloat(i, "pPreGodHealth");
 					SetHealth(i,health);
 					armor = GetPVarFloat(i, "pPreGodArmor");

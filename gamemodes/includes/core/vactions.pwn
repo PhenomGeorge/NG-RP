@@ -20,7 +20,7 @@
 
 */
 
-#include <a_samp>
+#include <open.mp>
 #include <Pawn.CMD>
 
 //-------------------------------------------------

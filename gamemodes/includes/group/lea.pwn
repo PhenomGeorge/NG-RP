@@ -1749,7 +1749,7 @@ CMD:tazer(playerid, params[])
 			if(TazerTimeout[playerid] > 0) return SendClientMessageEx(playerid, COLOR_WHITE, "Your tazer is reloading");
 
 			pTazerReplace{playerid} = PlayerInfo[playerid][pGuns][2];
-			if(PlayerInfo[playerid][pGuns][2] != 0) RemovePlayerWeapon(playerid, PlayerInfo[playerid][pGuns][2]);
+			if(PlayerInfo[playerid][pGuns][2] != 0) NGGRemovePlayerWeapon(playerid, PlayerInfo[playerid][pGuns][2]);
 			format(string, sizeof(string), "* %s unholsters their tazer.", GetPlayerNameEx(playerid));
 			ProxDetector(4.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			GivePlayerValidWeapon(playerid, 23);
@@ -1760,7 +1760,7 @@ CMD:tazer(playerid, params[])
 		}
 		else
 		{
-			RemovePlayerWeapon(playerid, 23);
+			NGGRemovePlayerWeapon(playerid, 23);
 			GivePlayerValidWeapon(playerid, pTazerReplace{playerid});
 			format(string, sizeof(string), "* %s holsters their tazer.", GetPlayerNameEx(playerid));
 			ProxDetector(4.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
@@ -1853,7 +1853,7 @@ CMD:radargun(playerid, params[])
 		if(SpeedRadar == 0)
 		{
 			SetPVarInt(playerid, "RadarReplacement", PlayerInfo[playerid][pGuns][9]);
-			if(PlayerInfo[playerid][pGuns][9] != 0) RemovePlayerWeapon(playerid, PlayerInfo[playerid][pGuns][9]);
+			if(PlayerInfo[playerid][pGuns][9] != 0) NGGRemovePlayerWeapon(playerid, PlayerInfo[playerid][pGuns][9]);
 			format(string, sizeof(string), "* %s takes out a LIDAR speed gun.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			GivePlayerValidWeapon(playerid, 43);
@@ -1861,7 +1861,7 @@ CMD:radargun(playerid, params[])
 		}
 		else
 		{
-			RemovePlayerWeapon(playerid, 43);
+			NGGRemovePlayerWeapon(playerid, 43);
 			GivePlayerValidWeapon(playerid, GetPVarInt(playerid, "RadarReplacement"));
 			format(string, sizeof(string), "* %s puts away their LIDAR speed gun.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);

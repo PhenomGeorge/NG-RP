@@ -749,15 +749,15 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 			SetTimerEx("TazerTimer",1000,false,"d",playerid);
 			SendClientMessageEx(playerid, COLOR_WHITE, "Your tazer is recharging!");
 			
-			RemovePlayerWeapon(playerid, 23);
+			NGGRemovePlayerWeapon(playerid, 23);
 			GivePlayerValidWeapon(playerid, pTazerReplace{playerid});
 			format(szMiscArray, sizeof(szMiscArray), "* %s holsters their tazer.", GetPlayerNameEx(playerid));
 			ProxDetector(4.0, playerid, szMiscArray, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			pTazer{playerid} = 0;
 		}
 	}
-	if(GetPVarInt(playerid, "EventToken") == 0 && !GetPVarType(playerid, "IsInArena") && (vehmodel != 425 && vehmodel != 432 && vehmodel != 447 && vehmodel != 464 && vehmodel != 476 && vehmodel != 520) && GetWeaponSlot(weaponid) != -1) {
-		if(PlayerInfo[playerid][pGuns][GetWeaponSlot(weaponid)] != weaponid) return 1;
+	if(GetPVarInt(playerid, "EventToken") == 0 && !GetPVarType(playerid, "IsInArena") && (vehmodel != 425 && vehmodel != 432 && vehmodel != 447 && vehmodel != 464 && vehmodel != 476 && vehmodel != 520) && NGGGetWeaponSlot(weaponid) != -1) {
+		if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(weaponid)] != weaponid) return 1;
 	}
 
 	if(hittype == BULLET_HIT_TYPE_PLAYER) {

@@ -259,7 +259,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
                     if(IsAnAmbulance(carid))
 					{
 						for(new i = 2; i < 3; i++)
-                        if(!IsVehicleOccupied(carid, i)) { seat = i; break; } 
+                        if(!NGGIsVehicleOccupied(carid, i)) { seat = i; break; } 
 					}
 					else return 1;
 					format(realstring, sizeof(realstring), "/loadpt %s %d", id, seat);

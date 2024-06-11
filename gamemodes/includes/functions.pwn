@@ -71,17 +71,8 @@ CheckPointCheck(iTargetID)  {
 	return 0;
 }
 
-IsNumeric(const szInput[]) {
-
-	new
-		iChar,
-		i = 0;
-
-	while ((iChar = szInput[i++])) if (!('0' <= iChar <= '9')) return 0;
-	return 1;
-}
-
-ReturnUserFromIP(const szIP[]) {
+forward ReturnUserFromIP(const szIP[]);
+stock ReturnUserFromIP(const szIP[]) {
 
 	foreach(new i : Player) {
 		if(strcmp(szIP, GetPlayerIpEx(i), true) == 0) return i;
@@ -151,10 +142,10 @@ Float:GetPointDistanceToPointEx(Float:x1,Float:y1,Float:x2,Float:y2)
   return floatsqroot(x*x+y*y);
 } */
 
-RemovePlayerWeapon(playerid, weaponid)
+NGGRemovePlayerWeapon(playerid, weaponid)
 {
 	ResetPlayerWeapons(playerid);
-	PlayerInfo[playerid][pGuns][GetWeaponSlot(weaponid)] = 0;
+	PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(weaponid)] = 0;
 	SetPlayerWeaponsEx(playerid);
 	return 1;
 }
@@ -1693,7 +1684,7 @@ stock StripNewLine(const string[])
     }
 }
 
-stock StripColorEmbedding(const string[])
+stock StripColorEmbedding(string[])
 {
  	new i, tmp[7];
   	while (i < strlen(string) - 7)
@@ -1701,7 +1692,7 @@ stock StripColorEmbedding(const string[])
 	    if (string[i] == '{' && string[i + 7] == '}')
 		{
 		    strmid(tmp, string, i + 1, i + 7);
-			if (ishex(tmp))
+			if (IsHex(tmp))
 			{
 				strdel(string, i, i + 8);
 				i = 0;

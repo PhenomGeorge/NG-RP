@@ -45,8 +45,7 @@
 //#pragma dynamic 4500000
 			/*  ---------------- NATIVES ----------------- */
 native WP_Hash(buffer[], len, const str[]);
-native gpci(playerid, serial[], maxlen);
-native IsValidVehicle(vehicleid);
+
 #define PRESSED(%0) \
     (((newkeys & (%0)) == (%0)) && ((oldkeys & (%0)) != (%0)))
 #define RELEASED(%0) \

@@ -33,7 +33,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-#include <a_samp>
+#include <open.mp>
 #include <streamer>
 
 public OnFilterScriptExit() {

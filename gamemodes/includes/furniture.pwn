@@ -1278,29 +1278,29 @@ DestroyFurniture(iHouseID, iSlotID) {
 FurniturePlayerTDInit(playerid) {
 
 	Furniture_PTD[playerid][0] = CreatePlayerTextDraw(playerid, 551.000000, 354.000000, "Skin");
-	PlayerTextDrawBackgroundColor(playerid, Furniture_PTD[playerid][0], 0);
+	PlayerTextDrawBackgroundColour(playerid, Furniture_PTD[playerid][0], 0);
 	PlayerTextDrawFont(playerid, Furniture_PTD[playerid][0], 5);
 	PlayerTextDrawLetterSize(playerid, Furniture_PTD[playerid][0], 0.169999, 1.200000);
-	PlayerTextDrawColor(playerid, Furniture_PTD[playerid][0], -1);
+	PlayerTextDrawColour(playerid, Furniture_PTD[playerid][0], -1);
 	PlayerTextDrawSetOutline(playerid, Furniture_PTD[playerid][0], 0);
 	PlayerTextDrawSetProportional(playerid, Furniture_PTD[playerid][0], 1);
 	PlayerTextDrawSetShadow(playerid, Furniture_PTD[playerid][0], 2);
 	PlayerTextDrawUseBox(playerid, Furniture_PTD[playerid][0], 1);
-	PlayerTextDrawBoxColor(playerid, Furniture_PTD[playerid][0], 0x00000000);
+	PlayerTextDrawBoxColour(playerid, Furniture_PTD[playerid][0], 0x00000000);
 	PlayerTextDrawTextSize(playerid, Furniture_PTD[playerid][0], 80.000000, 74.000000);
 	PlayerTextDrawSetPreviewModel(playerid, Furniture_PTD[playerid][0], 93);
 	PlayerTextDrawSetPreviewRot(playerid, Furniture_PTD[playerid][0], 345.000000, 0.000000, 320.000000, 1.000000);
 	PlayerTextDrawSetSelectable(playerid, Furniture_PTD[playerid][0], 0);
 
 	Furniture_PTD[playerid][1] = CreatePlayerTextDraw(playerid,495.000000, 173.000000, "Model");
-	PlayerTextDrawBackgroundColor(playerid, Furniture_PTD[playerid][1], 0);
+	PlayerTextDrawBackgroundColour(playerid, Furniture_PTD[playerid][1], 0);
 	PlayerTextDrawFont(playerid, Furniture_PTD[playerid][1], 5);
- 	PlayerTextDrawColor(playerid, Furniture_PTD[playerid][1], -1);
+ 	PlayerTextDrawColour(playerid, Furniture_PTD[playerid][1], -1);
 	PlayerTextDrawSetOutline(playerid, Furniture_PTD[playerid][1], 0);
 	PlayerTextDrawSetProportional(playerid, Furniture_PTD[playerid][1], 1);
 	PlayerTextDrawSetShadow(playerid, Furniture_PTD[playerid][1], 0);
 	PlayerTextDrawUseBox(playerid, Furniture_PTD[playerid][1], 1);
-	PlayerTextDrawBoxColor(playerid, Furniture_PTD[playerid][1], 0x00000000);
+	PlayerTextDrawBoxColour(playerid, Furniture_PTD[playerid][1], 0x00000000);
 	PlayerTextDrawTextSize(playerid, Furniture_PTD[playerid][1], 109.000000, 97.000000);
 	PlayerTextDrawSetPreviewModel(playerid, Furniture_PTD[playerid][1], 0);
 	PlayerTextDrawSetPreviewRot(playerid,  Furniture_PTD[playerid][1], -16.000000, 0.000000, -55.000000, 1.000000);
@@ -1308,10 +1308,10 @@ FurniturePlayerTDInit(playerid) {
 
 	Furniture_PTD[playerid][2] = CreatePlayerTextDraw(playerid,627.000000, 287.000000, "Slot: 1");
 	PlayerTextDrawAlignment(playerid, Furniture_PTD[playerid][2], 3);
-	PlayerTextDrawBackgroundColor(playerid, Furniture_PTD[playerid][2], 255);
+	PlayerTextDrawBackgroundColour(playerid, Furniture_PTD[playerid][2], 255);
 	PlayerTextDrawFont(playerid, Furniture_PTD[playerid][2], 2);
 	PlayerTextDrawLetterSize(playerid, Furniture_PTD[playerid][2], 0.230000, 1.000000);
-	PlayerTextDrawColor(playerid, Furniture_PTD[playerid][2], -1);
+	PlayerTextDrawColour(playerid, Furniture_PTD[playerid][2], -1);
 	PlayerTextDrawSetOutline(playerid, Furniture_PTD[playerid][2], 0);
 	PlayerTextDrawSetProportional(playerid, Furniture_PTD[playerid][2], 1);
 	PlayerTextDrawSetShadow(playerid, Furniture_PTD[playerid][2], 1);
@@ -1319,10 +1319,10 @@ FurniturePlayerTDInit(playerid) {
 
 	Furniture_PTD[playerid][3] = CreatePlayerTextDraw(playerid, 628.000000, 299.000000, "Name:");
 	PlayerTextDrawAlignment(playerid, Furniture_PTD[playerid][3], 3);
-	PlayerTextDrawBackgroundColor(playerid, Furniture_PTD[playerid][3], 255);
+	PlayerTextDrawBackgroundColour(playerid, Furniture_PTD[playerid][3], 255);
 	PlayerTextDrawFont(playerid, Furniture_PTD[playerid][3], 2);
 	PlayerTextDrawLetterSize(playerid, Furniture_PTD[playerid][3], 0.230000, 1.000000);
-	PlayerTextDrawColor(playerid, Furniture_PTD[playerid][3], -1);
+	PlayerTextDrawColour(playerid, Furniture_PTD[playerid][3], -1);
 	PlayerTextDrawSetOutline(playerid, Furniture_PTD[playerid][3], 0);
 	PlayerTextDrawSetProportional(playerid, Furniture_PTD[playerid][3], 1);
 	PlayerTextDrawSetShadow(playerid, Furniture_PTD[playerid][3], 1);

@@ -318,7 +318,7 @@ CMD:loadpt(playerid, params[])
                     new carid = gLastCar[playerid];
                     if(IsAnAmbulance(carid))
 					{
-                        if(IsVehicleOccupied(carid, seat)) {
+                        if(NGGIsVehicleOccupied(carid, seat)) {
 							SendClientMessageEx(playerid, COLOR_GREY, "That seat is occupied.");
 							return 1;
 						}

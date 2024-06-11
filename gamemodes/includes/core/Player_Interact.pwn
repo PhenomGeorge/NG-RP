@@ -616,7 +616,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				if(GetPVarType(buyingfrom, "Interact_SellGun")) {
 
 					new weaponid = GetPVarInt(buyingfrom, "Interact_SellGun");
-					if(PlayerInfo[buyingfrom][pGuns][GetWeaponSlot(weaponid)] == weaponid)
+					if(PlayerInfo[buyingfrom][pGuns][NGGGetWeaponSlot(weaponid)] == weaponid)
 					{
 						Interact_GivePlayerValidWeapon(buyingfrom, playerid, weaponid, price);
 					}
@@ -656,15 +656,15 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 
 Interact_GivePlayerValidWeapon(playerid, giveplayerid, weaponid, saleprice = 0) {
 
-	if(PlayerInfo[giveplayerid][pGuns][GetWeaponSlot(weaponid)] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "That player already has a weapon in that slot");
-	if(PlayerInfo[playerid][pGuns][GetWeaponSlot(weaponid)] != weaponid) return SendClientMessageEx(playerid, COLOR_GREY, "You don't have a weapon in your possession.");
+	if(PlayerInfo[giveplayerid][pGuns][NGGGetWeaponSlot(weaponid)] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "That player already has a weapon in that slot");
+	if(PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(weaponid)] != weaponid) return SendClientMessageEx(playerid, COLOR_GREY, "You don't have a weapon in your possession.");
 	if(weaponid == WEAPON_KNIFE) return SendClientMessageEx(playerid, COLOR_GREY, "You cannot give knives!");
 	if(GetPVarType(giveplayerid, "IsInArena") || GetPVarInt(giveplayerid, "EventToken") != 0) return SendClientMessageEx(playerid, COLOR_GREY, "You cannot do this right now!");
 	if(PlayerInfo[giveplayerid][pConnectHours] < 2 || PlayerInfo[giveplayerid][pWRestricted] > 0) return SendClientMessageEx(playerid, COLOR_GREY, "That person is currently restricted from carrying weapons");
 
 
 	if(saleprice != 0 && (GetPlayerCash(giveplayerid) < saleprice || saleprice < 0)) return SendClientMessage(giveplayerid, COLOR_GRAD2, "You do not have enough money");
-	PlayerInfo[playerid][pGuns][GetWeaponSlot(weaponid)] = 0;
+	PlayerInfo[playerid][pGuns][NGGGetWeaponSlot(weaponid)] = 0;
 	SetPlayerWeaponsEx(playerid);
 
 	GivePlayerValidWeapon(giveplayerid, weaponid);
@@ -1135,7 +1135,7 @@ Interact_LoadPatient(playerid, giveplayerid, seatid = -1) {
 
         new carid = gLastCar[playerid];
         if(!IsAnAmbulance(carid)) return SendClientMessageEx(playerid, COLOR_GREY, "Your last vehicle was not an ambulance.");
-        if(IsVehicleOccupied(carid, seatid)) return SendClientMessageEx(playerid, COLOR_GREY, "That seat is occupied.");
+        if(NGGIsVehicleOccupied(carid, seatid)) return SendClientMessageEx(playerid, COLOR_GREY, "That seat is occupied.");
 		if(!IsPlayerInRangeOfVehicle(giveplayerid, carid, 10.0) || !IsPlayerInRangeOfVehicle(playerid, carid, 10.0)) return SendClientMessageEx(playerid, COLOR_GREY, "Both you and your patient must be near the ambulance.");
 
 		format(szMiscArray, sizeof(szMiscArray), "* You were loaded by paramedic %s.", GetPlayerNameEx(playerid));

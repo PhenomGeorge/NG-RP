@@ -5,7 +5,7 @@ C) Makes you anim/freeze in the spot waiting for ambulances and has an opt out b
 D) Sets checkpoint for any player in an ambulance when the call comes through
 */
 
-#include <a_samp>
+#include <open.mp>
 //#include <Seifader>
 #include <YSI_Data\y_iterate>
 

@@ -301,7 +301,7 @@ stock Vehicle_Enter(playerid, i) {
 stock Vehicle_Exit(playerid) {
  	
  	if(!IsAPlane(InsidePlane[playerid]) && !GetPVarType(playerid, "InsideCar")) {
-	    PlayerInfo[playerid][pAGuns][GetWeaponSlot(46)] = 46;
+	    PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(46)] = 46;
 	    GivePlayerValidWeapon(playerid, 46);
 	    SetPlayerPos(playerid, 0.000000, 0.000000, 420.000000); // lol nick
 	}
@@ -320,7 +320,7 @@ stock Vehicle_Exit(playerid) {
 			SetPlayerPos(playerid, X-2.7912, Y+3.2304, Z);
 			Player_StreamPrep(playerid, X-2.7912,Y+3.2304,Z, FREEZE_TIME);
 			if(Z > 50.0) {
-				PlayerInfo[playerid][pAGuns][GetWeaponSlot(46)] = 46;
+				PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(46)] = 46;
 				GivePlayerValidWeapon(playerid, 46);
 			}
 		}

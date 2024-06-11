@@ -58,7 +58,7 @@ stock IsSeatAvailable(vehicleid, seat)
 {
 	switch(GetVehicleModel(vehicleid)) {
 		case 425, 430, 432, 441, 446, 448, 452, 453, 454, 464, 465, 472, 473, 476, 481, 484, 485, 486, 493, 501, 509, 510, 519, 520, 530, 531, 532, 539, 553, 564, 568, 571, 572, 574, 583, 592, 594, 595: return 0;
-		default: if(IsVehicleOccupied(vehicleid, seat)) return 0;
+		default: if(NGGIsVehicleOccupied(vehicleid, seat)) return 0;
 	}
 	return 1;
 }
@@ -1482,7 +1482,7 @@ stock RespawnNearbyVehicles(iPlayerID, Float: fRadius) {
     GetPlayerPos(iPlayerID, fPlayerPos[0], fPlayerPos[1], fPlayerPos[2]);
     for(new i = 1; i < MAX_VEHICLES; i++)
 	{
-		if(GetVehicleModel(i) && GetVehicleDistanceFromPoint(i, fPlayerPos[0], fPlayerPos[1], fPlayerPos[2]) <= fRadius && !IsVehicleOccupied(i))
+		if(GetVehicleModel(i) && GetVehicleDistanceFromPoint(i, fPlayerPos[0], fPlayerPos[1], fPlayerPos[2]) <= fRadius && !NGGIsVehicleOccupied(i))
 		{
 			if(DynVeh[i] != -1)
 			{
@@ -1523,7 +1523,7 @@ stock GetVehicleTireState(vehicleid, &tire1, &tire2, &tire3, &tire4)
 	tire4 = !(tires >> 3 & 0x1);
 }
 
-stock IsVehicleOccupied(iVehicleID, iSeatID = 0) {
+stock NGGIsVehicleOccupied(iVehicleID, iSeatID = 0) {
 	foreach(new x : Player)
 	{
 		if(GetPlayerVehicleID(x) == iVehicleID && GetPlayerVehicleSeat(x) == iSeatID) {
@@ -1801,7 +1801,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 		}
 		else if(IsAHelicopter(vehicleid))
 		{
-		    PlayerInfo[playerid][pAGuns][GetWeaponSlot(46)] = 46;
+		    PlayerInfo[playerid][pAGuns][NGGGetWeaponSlot(46)] = 46;
 			GivePlayerValidWeapon(playerid, 46);
 		}
 		else if(IsAnTaxi(vehicleid) || IsAnBus(vehicleid))

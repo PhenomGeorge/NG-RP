@@ -77,7 +77,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
- #include <a_samp>
+#pragma warning disable 219
+#pragma warning disable 213
+#pragma warning disable 234
 
 /*  ---------------- SCRIPT REVISION ----------------- */
 
@@ -93,12 +95,15 @@
 
 #define CGEN_MEMORY (20000)
 
-#undef  MAX_PLAYERS
 #define MAX_PLAYERS (500)
+
+#include <open.mp>
 #include <a_mysql>
 #include <crashdetect>
 #include <YSI_Coding\y_timers>
 #include <YSI_Core\y_utils>
+#include <YSI_Data\y_iterate>
+#include <YSI_Coding\y_va>
 #include <streamer>
 #include <yom_buttons>
 #include <Pawn.CMD>
@@ -197,7 +202,6 @@
 #include "./includes/core/countrycheck.pwn"
 #include "./includes/core/countdown.pwn"
 #include "./includes/core/filehandle.pwn"
-#include "./includes/core/downloadmodel.pwn"
 #include "./includes/core/initgamemode.pwn"
 #include "./includes/core/login.pwn"
 #include "./includes/core/miscload.pwn"

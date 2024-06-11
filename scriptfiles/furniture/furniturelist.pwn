@@ -2,7 +2,7 @@
 	Assembled by Jingles
 */
 
-#include <a_samp>
+#include <open.mp>
 
 // Bathroom
 

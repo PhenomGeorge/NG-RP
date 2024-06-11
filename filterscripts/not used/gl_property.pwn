@@ -6,7 +6,7 @@
 //
 //-------------------------------------------------------
 
-#include <a_samp>
+#include <open.mp>
 #include "../include/gl_common.inc"
 
 #define FILTERSCRIPT

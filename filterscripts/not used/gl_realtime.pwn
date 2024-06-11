@@ -5,7 +5,7 @@
 //
 //  Kye 2009
 
-#include <a_samp>
+#include <open.mp>
 #pragma tabsize 0
 
 //--------------------------------------------------

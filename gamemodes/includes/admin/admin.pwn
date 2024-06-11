@@ -48,7 +48,7 @@ stock IsAdminLevel(playerid, level, warning = 1) {
 	return 0;
 }
 
-stock ABroadCast(hColor, const szMessage[], iLevel, bool: bUndercover = false, bool: Discord = true)
+stock ABroadCast(hColor, szMessage[], iLevel, bool: bUndercover = false, bool: Discord = true)
 {
 	foreach(new i : Player) {
 		if(PlayerInfo[i][pAdmin] >= iLevel && (bUndercover || !PlayerInfo[i][pTogReports])) {
@@ -259,7 +259,7 @@ CMD:givegun(playerid, params[])
             if((PlayerInfo[playa][pConnectHours] < 2 || PlayerInfo[playa][pWRestricted] > 0) && gun != 46 && gun != 43) return SendClientMessageEx(playerid, COLOR_GRAD2, "That person is currently restricted from carrying weapons");
 			if(PlayerInfo[playa][pAccountRestricted] != 0) return SendClientMessageEx(playerid, COLOR_GRAD1, "You cannot do this to someone that has his account restricted!");
 		    if(playa != INVALID_PLAYER_ID && gun <= 20 || gun >= 22) {
-                PlayerInfo[playa][pGuns][GetWeaponSlot(gun)] = gun;
+                PlayerInfo[playa][pGuns][NGGGetWeaponSlot(gun)] = gun;
                 GivePlayerValidWeapon(playa, gun);
                 SendClientMessageEx(playerid, COLOR_GRAD1, szMiscArray);
             }
@@ -4429,7 +4429,7 @@ CMD:entercar(playerid, params[])
 		if(sscanf(params, "ii", carid, seatid))	return SendClientMessage(playerid, COLOR_WHITE, "USAGE: /entercar [carid] [seatid]");
 		if(!(1 <= carid <= MAX_VEHICLES)) return SendClientMessageEx(playerid, COLOR_GREY, "Valid vehicle IDs run from 1 to 2000.");
 		if(seatid < 0 || seatid > 3) return SendClientMessageEx(playerid, COLOR_GREY, "Invalid Seat ID!");
-		else if(!IsVehicleOccupied(carid, seatid)) IsPlayerEntering{playerid} = true, PutPlayerInVehicle(playerid, carid, seatid), SendClientMessageEx(playerid, COLOR_GRAD1, "   You have been teleported!");
+		else if(!NGGIsVehicleOccupied(carid, seatid)) IsPlayerEntering{playerid} = true, PutPlayerInVehicle(playerid, carid, seatid), SendClientMessageEx(playerid, COLOR_GRAD1, "You have been teleported!");
 		else SendClientMessageEx(playerid, COLOR_GREY, "That seat is occupied.");
 	}
 	else
@@ -4734,7 +4734,7 @@ CMD:takeadminweapons(playerid, params[])
 			{
 				if(PlayerInfo[giveplayerid][pAGuns][s] != 0)
 				{
-					RemovePlayerWeapon(giveplayerid, PlayerInfo[giveplayerid][pAGuns][s]);
+					NGGRemovePlayerWeapon(giveplayerid, PlayerInfo[giveplayerid][pAGuns][s]);
 				}
 			}
 			format(string,sizeof(string),"You have removed %s's admin spawned weapons.", GetPlayerNameEx(giveplayerid));

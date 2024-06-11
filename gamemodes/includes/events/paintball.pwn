@@ -3433,7 +3433,7 @@ CMD:joinarena(playerid, params[])
         }
         if(pTazer{playerid} != 0)
 		{
-			RemovePlayerWeapon(playerid, 23);
+			NGGRemovePlayerWeapon(playerid, 23);
 			GivePlayerValidWeapon(playerid, pTazerReplace{playerid});
 			format(szMiscArray, sizeof(szMiscArray), "* %s holsters their tazer.", GetPlayerNameEx(playerid));			ProxDetector(4.0, playerid, szMiscArray, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
  			pTazer{playerid} = 0;

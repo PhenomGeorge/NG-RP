@@ -1565,7 +1565,7 @@ foreach(new i : Player)
 				{
 					PlayerStoned[i] = 0;
 					SetPlayerDrunkLevel(i, 0);
-					SendClientMessageEx(i, COLOR_GRAD1, " You are no longer stoned!");
+					SendClientMessageEx(i, COLOR_GRAD1, "You are no longer stoned!");
 				}
 			}
 			if(BoxWaitTime[i] > 0)
