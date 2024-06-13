@@ -87,14 +87,14 @@ hook OnPlayerConnect(playerid) {
 	return 1;
 }
 
-hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
+hook OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys) {
 	if((newkeys & KEY_SPRINT) || (newkeys & KEY_SECONDARY_ATTACK)) {
 		if(IsDoingAnim[playerid]) ClearAnimationsEx(playerid);
 	}
 	return 1;
 }
 
-public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ) {
+public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ) {
 	new string[128];
 	//SendClientMessageEx(playerid, COLOR_WHITE, "Weapon %i fired. hittype: %i   hitid: %i   pos: %f, %f, %f", weaponid, hittype, hitid, fX, fY, fZ);
 	if(GhostHacker[playerid][5] < gettime()) {
@@ -562,7 +562,7 @@ timer DeathScreen[4000](playerid) {
 	return 1;
 }
 
-public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
+public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)
 {
 	szMiscArray[0] = 0;
 	if((0 <= bodypart < 2)) return 1;

@@ -15,6 +15,7 @@ native SetPlayerAttachedObject(playerid, index, modelid, bone, Float:fOffsetX = 
 native NGGGetPlayerAttachedObject(playerid, index, &modelid, &bone, &Float:fOffsetX, &Float:fOffsetY, &Float:fOffsetZ, &Float:fRotX, &Float:fRotY, &Float:fRotZ, &Float:fScaleX, &Float:fScaleY, &Float:fScaleZ, &materialcolor1, &materialcolor2);
 native RemovePlayerAttachedObject(playerid, index);
 */
+#include <YSI_Coding\y_hooks>
 
 #define att_modelid 		(0)
 #define att_bone 			(1)
@@ -228,7 +229,7 @@ public OnPlayerEditAttachedObject(playerid, EDIT_RESPONSE:response, index, model
 	#define RELEASED(%0) (((newkeys & (%0)) != (%0)) && ((oldkeys & (%0)) == (%0)))
 #endif
 
-public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+hook OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
 {
 	if (HOLDING(KEY_AIM))
 	{
@@ -274,21 +275,8 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		}
 	}
 
-	#if defined ATT_OnPlayerKeyStateChange
-       	return ATT_OnPlayerKeyStateChange(playerid, newkeys, oldkeys);
-	#else
-	   	return 1;
-	#endif
+	return 1;
 }
-#if defined _ALS_OnPlayerKeyStateChange
-    #undef OnPlayerKeyStateChange
-#else
-    #define _ALS_OnPlayerKeyStateChange
-#endif
-#define OnPlayerKeyStateChange ATT_OnPlayerKeyStateChange
-#if defined ATT_OnPlayerKeyStateChange
-    forward ATT_OnPlayerKeyStateChange(playerid, newkeys, oldkeys);
-#endif
 
 stock ATT_SetPlayerAttachedObject(playerid, index, modelid, bone, Float:fOffsetX = 0.0, Float:fOffsetY = 0.0, Float:fOffsetZ = 0.0, Float:fRotX = 0.0, Float:fRotY = 0.0, Float:fRotZ = 0.0, Float:fScaleX = 1.0, Float:fScaleY = 1.0, Float:fScaleZ = 1.0, materialcolor1 = 0, materialcolor2 = 0)
 {

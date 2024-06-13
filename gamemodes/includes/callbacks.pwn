@@ -3704,7 +3704,7 @@ public OnPlayerEnterCheckpoint(playerid)
 	return 1;
 }
 
-public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+public OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
 {
 	if(GetPVarInt(playerid, "Injured") == 1) return 1;
 	if(PlayerInfo[playerid][pHospital] > 0) return 1;

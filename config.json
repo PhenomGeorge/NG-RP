@@ -13,6 +13,7 @@
     },
     "chat_input_filter": true,
     "discord": {
+        "bot_token": "561311a1sa1",
         "invite": ""
     },
     "enable_query": true,
@@ -65,7 +66,7 @@
     },
     "max_bots": 0,
     "max_players": 50,
-    "name": "open.mp server",
+    "name": "Next Generation Roleplay (OMP)",
     "network": {
         "acks_limit": 3000,
         "aiming_sync_rate": 30,
@@ -93,16 +94,16 @@
     },
     "password": "",
     "pawn": {
-        "legacy_plugins": [],
+        "legacy_plugins": ["crashdetect", "jit.dll", "mysql.dll", "gvar.dll", "streamer.dll", "Whirlpool.dll"],
         "main_scripts": [
-            "gungame 1"
+            "NGRP"
         ],
         "side_scripts": []
     },
     "rcon": {
         "allow_teleport": false,
         "enable": false,
-        "password": "changeme1"
+        "password": "asdaddad1323dsdasd"
     },
     "sleep": 5.0,
     "use_dyn_ticks": true,

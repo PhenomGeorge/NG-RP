@@ -1,2 +1,7 @@
 .vscode/tasks.json
 gamemodes/NGRP.amx
+log.txt
+logs/errors.log
+logs/warnings.log
+logs/log-core.log
+omp_minidump.dmp

@@ -16,7 +16,7 @@
 				Current Developers:
 								*** Director of SA:MP Development:
 								    Shane
-
+								**  Glenn Velasco aka M4ddator **
 								**  Development Staff:
 									Miguel (s0nic)
 									Farva
@@ -80,7 +80,7 @@
 #pragma warning disable 219
 #pragma warning disable 213
 #pragma warning disable 234
-
+#pragma dynamic 50000
 /*  ---------------- SCRIPT REVISION ----------------- */
 
 // Do not forget to change this everytime you commit - it's mandatory!
@@ -93,7 +93,7 @@
 #define YSI_NO_MODE_CACHE
 #define YSI_NO_OPTIMISATION_MESSAGE
 
-#define CGEN_MEMORY (20000)
+#define CGEN_MEMORY (190000)
 
 #define MAX_PLAYERS (500)
 

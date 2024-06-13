@@ -393,6 +393,7 @@ ShowTutorialDialog(playerid, stage)
 			szMiscArray = "{FFFFFF}_______________________________________________________________________________________________________________________________________________________\n\n\n";
 			strcat(szMiscArray, "You are now completely finished with the tutorial. Press the next button to be taken to the character creation menu.\n\n");
 			strcat(szMiscArray, "\t{F69521}Developers\n");
+			strcat(szMiscArray, "\t\t{F69521}Current Developer{FFFFFF}:\n\t\t\tGlenn Velasco aka M4ddator\n\n");
 			strcat(szMiscArray, "\t\t{F69521}Director of Development{FFFFFF}:\n\t\t\tShane\n\n");
 			strcat(szMiscArray, "\t\t{F69521}Developers{FFFFFF}:\n\
 				\t\t\tMiguel\n\
