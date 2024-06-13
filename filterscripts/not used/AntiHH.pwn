@@ -119,7 +119,7 @@ public OnPlayerText(playerid, text[]) // THIS IS FOR DEBUGGING
 	return 1;
 }
 
-public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid)
+public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid)
 {
 	if(weaponid == 50)
 	{

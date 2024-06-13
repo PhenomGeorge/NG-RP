@@ -152,7 +152,7 @@ hook OnGameModeInit()
 	return 1;
 }
 
-hook OnPlayerStateChange(playerid, newstate, oldstate)
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
 	if(GetPVarType(playerid, "pDTest") > 0)
 	{

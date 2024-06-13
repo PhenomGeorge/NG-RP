@@ -139,7 +139,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	}
 }
 
-public OnPlayerStateChange(playerid, newstate, oldstate)
+public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
 	if(newstate==PLAYER_STATE_ONFOOT&&oldstate==PLAYER_STATE_DRIVER&&GetVehicleModel(LastCar[playerid])==416)
 	{

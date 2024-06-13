@@ -507,7 +507,7 @@ public OnPlayerEnterCheckpoint(playerid)
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) if(IsPlayerInDynamicArea(playerid, festivalarea) || IsPlayerInDynamicArea(playerid, mazearea)) ResetPlayerWeapons(playerid);
 
-public OnPlayerStateChange(playerid, newstate, oldstate)
+public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
 	if(newstate == PLAYER_STATE_DRIVER)
 	{

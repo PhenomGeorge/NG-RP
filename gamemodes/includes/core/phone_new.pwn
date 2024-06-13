@@ -1277,7 +1277,7 @@ CMD:fpm(playerid, params[]) {
 alias:fpm("firstperson", "picture")
 
 /*
-hook OnPlayerStateChange(playerid, newstate, oldstate) {
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate) {
 
     if(oldstate == PLAYER_STATE_ONFOOT && (newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER)) {
     	new iVehicleID = GetPlayerVehicleID(playerid);

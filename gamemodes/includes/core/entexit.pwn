@@ -247,7 +247,7 @@ ENT_DelVar(playerid) {
 }
 */
 
-hook OnPlayerStateChange(playerid, newstate, oldstate) {
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate) {
 
 	if(newstate == PLAYER_STATE_PASSENGER) {
 		new iVehID = GetPlayerVehicleID(playerid);

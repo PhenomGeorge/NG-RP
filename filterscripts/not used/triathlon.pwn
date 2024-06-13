@@ -682,7 +682,7 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 	return 1;
 }
 
-public OnPlayerStateChange(playerid, newstate, oldstate)
+public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
 	return 1;
 }

@@ -81,7 +81,7 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 	return 1;
 }
 
-hook OnPlayerStateChange(playerid, newstate, oldstate) {
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate) {
 	if(newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER) {
 		if(CarryCrate[playerid] >= 0) {
 			SendClientMessageEx(playerid, COLOR_GREY, "You can't be in any vehicles whilst carrying a crate!");

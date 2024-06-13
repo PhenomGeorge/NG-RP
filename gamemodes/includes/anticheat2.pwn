@@ -669,7 +669,7 @@ hook OnPlayerEnterVehicle(playerid, vehicleid, ispassenger) {
 	arrAntiCheat[playerid][ac_iVehID] = vehicleid;
 }
 
-hook OnPlayerStateChange(playerid, newstate, oldstate) {
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate) {
 
 	if(newstate == PLAYER_STATE_DRIVER) ac_iLastVehicleID[playerid] = GetPlayerVehicleID(playerid);
 	if(oldstate == PLAYER_STATE_DRIVER && newstate == PLAYER_STATE_ONFOOT) defer AC_ResetPVars(playerid, 0);

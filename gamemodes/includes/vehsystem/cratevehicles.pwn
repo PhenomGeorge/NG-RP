@@ -75,7 +75,7 @@ hook OnGameModeInit() {
 	return 1;
 }
 
-hook OnPlayerStateChange(playerid, newstate, oldstate) {
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate) {
 	new carid;
 	if(newstate == PLAYER_STATE_DRIVER) {
 		if((carid = IsDynamicCrateVehicle(GetPlayerVehicleID(playerid))) != -1) {

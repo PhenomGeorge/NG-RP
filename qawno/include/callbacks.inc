@@ -120,6 +120,8 @@
 	native GetPlayerPacketLoss(playerid);
 */
 
+#include <YSI_Coding\y_hooks>
+
 #if !defined POTENTIAL_CRASH_DAMAGE
 	#define POTENTIAL_CRASH_DAMAGE 		55.0
 #endif
@@ -637,7 +639,7 @@ stock CB_CancelSelectTextDraw(playerid)
 // SA-MP Callbacks
 // --------------------------------------------------
 
-public OnPlayerDisconnect(playerid, reason)
+hook OnPlayerDisconnect(playerid, reason)
 {
 	if(Callback_GetFlag(playerid, e_bHoldKey))
 	{
@@ -667,36 +669,24 @@ public OnPlayerDisconnect(playerid, reason)
 		s_aPlayerInfo[playerid][e_iShotsFired][i] = 0;
 	}
 
- 	#if defined CB_OnPlayerDisconnect
- 	    return CB_OnPlayerDisconnect(playerid, reason);
-	#else
-	    return 1;
-	#endif
+ 	return 1;
 }
 
-public OnFilterScriptInit()
+hook OnFilterScriptInit()
 {
 	SetTimer("Callback_TabCheck", 600, true);
 
-	#if defined CB_OnFilterScriptInit
-	    return CB_OnFilterScriptInit();
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnGameModeInit()
+hook OnGameModeInit()
 {
  	SetTimer("Callback_TabCheck", 600, true);
 
-	#if defined CB_OnGameModeInit
-	    return CB_OnGameModeInit();
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ)
+hook OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ)
 {
 	new
 	    capacity = Callback_GetMaxClip(weaponid),
@@ -733,14 +723,10 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 	}
 	s_aPlayerTickInfo[playerid][e_PLAYER_LAST_SHOT] = GetConnectedTime(playerid);
 
-	#if defined CB_OnPlayerWeaponShot
-	    return CB_OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ);
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnPlayerUpdate(playerid)
+hook OnPlayerUpdate(playerid)
 {
 	new
 		weaponid = GetPlayerWeapon(playerid),
@@ -971,14 +957,10 @@ public OnPlayerUpdate(playerid)
 
 	s_aPlayerTickInfo[playerid][e_PLAYER_LAST_UPDATE] = GetConnectedTime(playerid);
 
-	#if defined CB_OnPlayerUpdate
-		return CB_OnPlayerUpdate(playerid);
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
+hook OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
 	new
 		vehicleid = GetPlayerVehicleID(playerid);
@@ -1011,14 +993,10 @@ public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstat
 		}
 	}
 
-	#if defined CB_OnPlayerStateChange
-	    return CB_OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate);
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
+hook OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
 {
 	new
 		weaponid = GetPlayerWeapon(playerid);
@@ -1051,14 +1029,10 @@ public OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
 		}
 	}
 
-	#if defined CB_OnPlayerKeyStateChange
-	    return CB_OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys);
-	#else
-		return 1;
-	#endif
+	return 1;
 }
 
-public OnPlayerClickTextDraw(playerid, Text:clickedid)
+hook OnPlayerClickTextDraw(playerid, Text:clickedid)
 {
 	if(clickedid == Text:INVALID_TEXT_DRAW && Callback_GetFlag(playerid, e_bSelectTD))
 	{
@@ -1066,14 +1040,10 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 		CallLocalFunction("OnPlayerHideCursor", "ii", playerid, s_aPlayerInfo[playerid][e_iHoverColor]);
 	}
 
-	#if defined CB_OnPlayerClickTextDraw
-		return CB_OnPlayerClickTextDraw(playerid, clickedid);
-	#else
-		return 0;
-	#endif
+	return 0;
 }
 
-public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)
+hook OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)
 {
 	if(weaponid == WEAPON_COLLISION && issuerid == INVALID_PLAYER_ID && amount >= 4.95)
 	{
@@ -1095,11 +1065,8 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bod
 		s_aPlayerTickInfo[playerid][e_PLAYER_BURN_TICK] = GetConnectedTime(playerid);
 	}
 
-	#if defined CB_OnPlayerTakeDamage
-		return CB_OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart);
-	#else
-		return 1;
-	#endif
+	
+	return 1;
 }
 
 // --------------------------------------------------
@@ -1216,107 +1183,3 @@ public Callback_TabCheck()
 #define ApplyAnimation          CB_ApplyAnimation
 #define SelectTextDraw          CB_SelectTextDraw
 #define CancelSelectTextDraw    CB_CancelSelectTextDraw
-
-// --------------------------------------------------
-// Callback hooks
-// --------------------------------------------------
-
-#if defined _ALS_OnFilterScriptInit
-	#undef OnFilterScriptInit
-#else
-	#define _ALS_OnFilterScriptInit
-#endif
-
-#if defined _ALS_OnGameModeInit
-	#undef OnGameModeInit
-#else
-	#define _ALS_OnGameModeInit
-#endif
-
-#if defined _ALS_OnPlayerDisconnect
-	#undef OnPlayerDisconnect
-#else
-	#define _ALS_OnPlayerDisconnect
-#endif
-
-#if defined _ALS_OnPlayerStateChange
-	#undef OnPlayerStateChange
-#else
-	#define _ALS_OnPlayerStateChange
-#endif
-
-#if defined _ALS_OnPlayerKeyStateChange
-	#undef OnPlayerKeyStateChange
-#else
-	#define _ALS_OnPlayerKeyStateChange
-#endif
-
-#if defined _ALS_OnPlayerUpdate
-	#undef OnPlayerUpdate
-#else
-	#define _ALS_OnPlayerUpdate
-#endif
-
-#if defined _ALS_OnPlayerWeaponShot
-	#undef OnPlayerWeaponShot
-#else
-	#define _ALS_OnPlayerWeaponShot
-#endif
-
-#if defined _ALS_OnPlayerClickTextDraw
-	#undef OnPlayerClickTextDraw
-#else
-	#define _ALS_OnPlayerClickTextDraw
-#endif
-
-#if defined _ALS_OnPlayerTakeDamage
-	#undef OnPlayerTakeDamage
-#else
-	#define _ALS_OnPlayerTakeDamage
-#endif
-
-#define OnFilterScriptInit  	CB_OnFilterScriptInit
-#define OnGameModeInit 			CB_OnGameModeInit
-#define OnPlayerDisconnect      CB_OnPlayerDisconnect
-#define OnPlayerUpdate 			CB_OnPlayerUpdate
-#define OnPlayerStateChange  	CB_OnPlayerStateChange
-#define OnPlayerKeyStateChange  CB_OnPlayerKeyStateChange
-#define OnPlayerWeaponShot      CB_OnPlayerWeaponShot
-#define OnPlayerClickTextDraw   CB_OnPlayerClickTextDraw
-#define OnPlayerTakeDamage      CB_OnPlayerTakeDamage
-
-#if defined CB_OnPlayerUpdate
-	forward CB_OnPlayerUpdate(playerid);
-#endif
-
-#if defined CB_OnFilterScriptInit
-	forward CB_OnFilterScriptInit();
-#endif
-
-#if defined CB_OnGameModeInit
-	forward CB_OnGameModeInit();
-#endif
-
-#if defined CB_OnPlayerDisconnect
-	forward CB_OnPlayerDisconnect(playerid, reason);
-#endif
-
-#if defined CB_OnPlayerStateChange
-	forward CB_OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate);
-#endif
-
-#if defined CB_OnPlayerKeyStateChange
-	forward CB_OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys);
-#endif
-
-#if defined CB_OnPlayerWeaponShot
-	forward CB_OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ);
-#endif
-
-#if defined CB_OnPlayerClickTextDraw
-	forward CB_OnPlayerClickTextDraw(playerid, Text:clickedid);
-#endif
-
-#if defined CB_OnPlayerTakeDamage
-	forward CB_OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart);
-#endif

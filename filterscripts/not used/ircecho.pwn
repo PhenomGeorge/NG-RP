@@ -288,7 +288,7 @@ public DPSGraph()
 #endif
 
 #if defined dpsmap
-public OnPlayerStateChange(playerid, newstate, oldstate)
+public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
 {
     if(newstate == PLAYER_STATE_DRIVER)
 	{
@@ -320,7 +320,7 @@ public RconEcho()
 	return 1;
 }
 
-public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid)
+public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid)
 {
 	if(weaponid < 47)
 	{
